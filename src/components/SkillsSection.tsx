@@ -12,17 +12,17 @@ const skillCategories: SkillCategory[] = [
   },
   {
     title: "Backend & Cloud",
-    skills: ["C#", ".NET Core/.NET 9", "Azure", "AWS", "Kubernetes", "Docker", "Azure Functions", "gRPC", "Microservices", "SQL Server", "CosmosDB", "MongoDB"],
+    skills: ["C#", ".NET Core/.NET 9", "Azure", "AWS", "Azure AKS", "Kubernetes", "Docker", "Azure Functions", "gRPC", "Microservices", "PostgreSQL", "SQL Server", "CosmosDB", "MongoDB"],
     color: "bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200"
   },
   {
     title: "Frontend & Mobile",
-    skills: ["Blazor", "React", "Angular", "Vue.js", "Node.js", "Swift", "Objective-C", "MAUI", "iOS Development", "Ionic", "Capacitor", "Electron"],
+    skills: ["Blazor", "Blazor WebAssembly", "React", "Angular", "Vue.js", "Node.js", "Swift", "Objective-C", "MAUI Blazor Hybrid", "iOS Development", "Android Development", "Ionic", "Capacitor", "Electron"],
     color: "bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200"
   },
   {
     title: "DevOps & Infrastructure",
-    skills: ["Azure DevOps", "GitHub", "CI/CD", "TeamCity", "Kubernetes", "Docker", "Terraform", "Bicep", "Infrastructure as Code", "Observability"],
+    skills: ["Azure DevOps", "GitHub", "CI/CD", "TeamCity", "Kubernetes", "Docker", "Terraform", "Bicep", "PowerShell", "Infrastructure as Code", "Azure Key Vault", "VNET", "Managed Identity", "Observability"],
     color: "bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200"
   },
   {
@@ -32,7 +32,7 @@ const skillCategories: SkillCategory[] = [
   },
   {
     title: "Databases & Integration",
-    skills: ["SQL Server", "CosmosDB", "MongoDB", "Couchbase", "PostgreSQL", "SQL Alchemy", "RabbitMQ", "SignalR", "REST APIs", "Okta SSO", "Enterprise Integration"],
+    skills: ["PostgreSQL", "SQL Server", "CosmosDB", "Azure Cosmos Postgres", "MongoDB", "Couchbase", "SQL Alchemy", "RabbitMQ", "SignalR", "gRPC APIs", "REST APIs", "Azure Storage", "Notification Hub", "Okta SSO", "Enterprise Integration"],
     color: "bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200"
   }
 ];

@@ -13,8 +13,8 @@ const experiences: Experience[] = [
     company: "ONEFlight International",
     period: "June 2025 - Present",
     years: "6 months",
-    description: "Leading teams and working closely with product and sales to align technical vision. Introduced AI tools like Cursor and Claude to accelerate development. Architecting enterprise-grade .NET Core and Blazor Server applications with Kubernetes deployment.",
-    technologies: [".NET 9", "Blazor", "Azure AKS", "Kubernetes", "CosmosDB", "SignalR", "gRPC", "Bicep", "MAUI"]
+    description: "Architecting scalable services for Book a Jet (BAJ) platform - a proprietary private aviation booking system serving global network of private jets. Leading development of MAUI Blazor hybrid mobile app connecting clients, pilots, concierge and crew. Built Infrastructure as Code with Bicep/PowerShell for Azure Kubernetes Service, managing enterprise-grade gRPC APIs with Blazor WebAssembly frontend.",
+    technologies: [".NET Core", "C#", "Blazor", "MAUI", "Azure AKS", "Kubernetes", "PostgreSQL", "CosmosDB", "SignalR", "gRPC", "Bicep", "PowerShell", "Azure Key Vault", "Notification Hub"]
   },
   {
     title: "Senior Software Engineer & Technical Lead",
