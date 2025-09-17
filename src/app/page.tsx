@@ -4,14 +4,19 @@ import ExperienceTimeline from '@/components/ExperienceTimeline';
 import ProjectsShowcase from '@/components/ProjectsShowcase';
 import SkillsSection from '@/components/SkillsSection';
 import SkillAssessment from '@/components/SkillAssessment';
+import LiveMetrics from '@/components/LiveMetrics';
 import ContactSection from '@/components/ContactSection';
+import AIChatbot from '@/components/AIChatbot';
+import ParticleBackground from '@/components/ParticleBackground';
 import { generateResumePDF } from '@/utils/generatePDF';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 relative">
+      {/* Particle Background */}
+      <ParticleBackground />
       {/* Hero Section */}
-      <section className="relative py-20 px-6">
+      <section className="relative py-20 px-6 z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-slate-900 dark:text-slate-100 mb-6">
             Jason Moore
@@ -77,6 +82,12 @@ export default function Home() {
               📊 Skills Assessment
             </a>
             <a
+              href="#live-metrics"
+              className="px-4 py-2 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-full hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors"
+            >
+              ⚡ Live Metrics
+            </a>
+            <a
               href="#contact"
               className="px-4 py-2 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-full hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors"
             >
@@ -87,7 +98,7 @@ export default function Home() {
       </section>
 
       {/* Quick Stats */}
-      <section className="py-16 px-6 bg-white dark:bg-slate-900">
+      <section className="py-16 px-6 bg-white dark:bg-slate-900 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
@@ -107,7 +118,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-8 text-center">
             About Me
@@ -140,29 +151,37 @@ export default function Home() {
       </section>
 
       {/* Experience Timeline */}
-      <div id="experience">
+      <div id="experience" className="relative z-10">
         <ExperienceTimeline />
       </div>
 
       {/* Projects Showcase */}
-      <div id="projects">
+      <div id="projects" className="relative z-10">
         <ProjectsShowcase />
       </div>
 
       {/* Skills Section */}
-      <div id="skills">
+      <div id="skills" className="relative z-10">
         <SkillsSection />
       </div>
 
       {/* Interactive Skills Assessment */}
-      <div id="skills-assessment">
+      <div id="skills-assessment" className="relative z-10">
         <SkillAssessment />
       </div>
 
+      {/* Live Metrics & Integrations */}
+      <div id="live-metrics" className="relative z-10">
+        <LiveMetrics />
+      </div>
+
       {/* Contact Section */}
-      <div id="contact">
+      <div id="contact" className="relative z-10">
         <ContactSection />
       </div>
+
+      {/* AI Chatbot */}
+      <AIChatbot />
     </div>
   );
 }
