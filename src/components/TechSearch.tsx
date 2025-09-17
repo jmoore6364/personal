@@ -192,7 +192,7 @@ export default function TechSearch({ onFilterChange, allTechnologies }: TechSear
 
       {selectedTechs.length === 0 && (
         <p className="text-sm text-slate-500 dark:text-slate-400 mt-4">
-          💡 Try searching for technologies like "React", "Azure", "AI", or "mobile" to see smart suggestions and filter Jason&apos;s experience.
+          💡 Try searching for technologies like &quot;React&quot;, &quot;Azure&quot;, &quot;AI&quot;, or &quot;mobile&quot; to see smart suggestions and filter Jason&apos;s experience.
         </p>
       )}
     </motion.div>
