@@ -193,7 +193,7 @@ const timelineVariants = {
     scaleY: 1,
     transition: {
       duration: 1.5,
-      ease: [0.4, 0, 0.2, 1]
+      ease: [0.4, 0, 0.2, 1] as const
     }
   }
 };
@@ -210,7 +210,7 @@ const cardVariants = {
     scale: 1,
     transition: {
       duration: 0.6,
-      ease: [0.4, 0, 0.2, 1]
+      ease: [0.4, 0, 0.2, 1] as const
     }
   }
 };
@@ -226,7 +226,7 @@ const dotVariants = {
     transition: {
       duration: 0.4,
       delay: 0.2,
-      ease: [0.18, 0.89, 0.32, 1.28]
+      ease: [0.18, 0.89, 0.32, 1.28] as const
     }
   }
 };
