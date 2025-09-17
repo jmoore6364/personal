@@ -1,0 +1,22 @@
+{
+  "name": "Jason Moore - Senior Software Engineer",
+  "short_name": "Jason Moore",
+  "description": "Senior Software Engineer & Technical Leader with 25+ years of experience",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity", "utilities"],
+  "lang": "en-US",
+  "scope": "/",
+  "id": "jason-moore-portfolio"
+}
