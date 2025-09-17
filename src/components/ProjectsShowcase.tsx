@@ -9,9 +9,9 @@ interface Project {
 const projects: Project[] = [
   {
     title: "Book a Jet (BAJ) Platform",
-    description: "Leading development of ONEFlight's proprietary private aviation booking platform serving global network of private jets. Built enterprise-grade gRPC APIs, MAUI Blazor hybrid mobile app, and Infrastructure as Code with Azure Kubernetes Service. Integrated flight logistics APIs and enhanced security/compliance for aviation industry.",
-    impact: "Streamlined private jet booking with real-time availability and transparent pricing",
-    technologies: [".NET Core", "Blazor", "MAUI", "gRPC", "Azure AKS", "PostgreSQL", "Bicep", "SignalR"],
+    description: "Leading development of ONEFlight's proprietary private aviation platform providing streamlined access to global network of private jets. Architecting scalable microservices with third-party flight logistics API integration, optimizing booking/payment workflows, and building MAUI Blazor hybrid mobile app connecting clients, pilots, concierge and crew. Implementing enterprise-grade gRPC APIs, Blazor WebAssembly frontend with SignalR real-time updates, and complete Azure infrastructure via Infrastructure as Code.",
+    impact: "Enabling real-time availability, transparent pricing, and concierge-level travel experiences",
+    technologies: [".NET Core", "Blazor WebAssembly", "MAUI", "gRPC", "Azure AKS", "PostgreSQL", "Azure Cosmos Postgres", "Bicep", "SignalR", "Azure Key Vault", "SiteImprove"],
     category: "Aviation Technology"
   },
   {

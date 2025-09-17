@@ -1,3 +1,7 @@
+"use client";
+
+import { generateResumePDF } from '@/utils/generatePDF';
+
 export default function ContactSection() {
   return (
     <section className="py-20 px-6 bg-white dark:bg-slate-900">
@@ -44,6 +48,15 @@ export default function ContactSection() {
                 >
                   LinkedIn Profile
                 </a>
+              </div>
+              <div className="flex items-center justify-center">
+                <span className="text-slate-600 dark:text-slate-400 mr-3">📄</span>
+                <button
+                  onClick={generateResumePDF}
+                  className="text-blue-600 dark:text-blue-400 hover:underline"
+                >
+                  Download Resume (PDF)
+                </button>
               </div>
             </div>
           </div>

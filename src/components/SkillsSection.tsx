@@ -22,7 +22,7 @@ const skillCategories: SkillCategory[] = [
   },
   {
     title: "DevOps & Infrastructure",
-    skills: ["Azure DevOps", "GitHub", "CI/CD", "TeamCity", "Kubernetes", "Docker", "Terraform", "Bicep", "PowerShell", "Infrastructure as Code", "Azure Key Vault", "VNET", "Managed Identity", "Observability"],
+    skills: ["Azure DevOps", "GitHub", "CI/CD", "TeamCity", "Kubernetes", "Docker", "Terraform", "Bicep", "PowerShell", "Infrastructure as Code", "Azure Key Vault", "VNET", "Managed Identity", "Observability", "SiteImprove"],
     color: "bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200"
   },
   {
