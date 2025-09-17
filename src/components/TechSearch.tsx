@@ -13,53 +13,144 @@ export default function TechSearch({ onFilterChange, allTechnologies }: TechSear
   const [selectedTechs, setSelectedTechs] = useState<string[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
 
-  // AI-powered tech suggestions based on search input
+  // AI-powered semantic search with fuzzy matching and intelligent relationships
   const aiSuggestions = useMemo(() => {
     if (!searchTerm.trim()) return [];
 
     const term = searchTerm.toLowerCase();
 
-    // Smart matching with AI-like logic
-    const exactMatches = allTechnologies.filter(tech =>
-      tech.toLowerCase().includes(term)
-    );
+    // Advanced similarity scoring function
+    const calculateSimilarity = (tech: string, searchTerm: string): number => {
+      const techLower = tech.toLowerCase();
+      let score = 0;
 
-    // AI-powered related technology suggestions
-    const relatedTechs: { [key: string]: string[] } = {
-      'react': ['Next.js', 'Angular', 'Vue.js', 'TypeScript', 'JavaScript'],
-      'angular': ['React', 'TypeScript', 'JavaScript', 'Node.js'],
-      'vue': ['React', 'Angular', 'JavaScript', 'TypeScript'],
-      'net': ['C#', 'Blazor', 'Azure', 'SQL Server', 'ASP.NET'],
-      'c#': ['.NET Core', 'Blazor', 'Azure', 'SQL Server', 'ASP.NET'],
-      'blazor': ['C#', '.NET Core', 'Azure', 'SignalR'],
-      'azure': ['AWS', 'Kubernetes', 'Docker', 'C#', '.NET Core'],
-      'aws': ['Azure', 'Kubernetes', 'Docker', 'Lambda', 'EC2'],
-      'kubernetes': ['Docker', 'Azure', 'AWS', 'DevOps'],
-      'docker': ['Kubernetes', 'Azure', 'AWS', 'DevOps'],
-      'python': ['PyTorch', 'Flask', 'Django', 'AI', 'Machine Learning'],
-      'ai': ['Python', 'PyTorch', 'Machine Learning', 'OpenAI'],
-      'ml': ['Python', 'PyTorch', 'AI', 'Machine Learning'],
-      'mobile': ['iOS', 'Swift', 'Android', 'Kotlin', 'React Native', 'MAUI'],
-      'ios': ['Swift', 'Objective-C', 'Android', 'Mobile Development'],
-      'android': ['Kotlin', 'Java', 'iOS', 'Mobile Development'],
-      'database': ['SQL Server', 'PostgreSQL', 'MongoDB', 'CosmosDB'],
-      'sql': ['SQL Server', 'PostgreSQL', 'MySQL', 'Database'],
-      'nosql': ['MongoDB', 'CosmosDB', 'Redis'],
-      'devops': ['Azure DevOps', 'GitHub', 'CI/CD', 'Docker', 'Kubernetes'],
-      'cloud': ['Azure', 'AWS', 'Kubernetes', 'Docker']
+      // Exact match gets highest score
+      if (techLower === searchTerm) score += 100;
+
+      // Starts with search term
+      if (techLower.startsWith(searchTerm)) score += 80;
+
+      // Contains search term
+      if (techLower.includes(searchTerm)) score += 60;
+
+      // Fuzzy matching - character overlap
+      const overlap = [...searchTerm].filter(char => techLower.includes(char)).length;
+      score += (overlap / searchTerm.length) * 20;
+
+      // Levenshtein distance for typo tolerance
+      const distance = levenshteinDistance(techLower, searchTerm);
+      if (distance <= 2) score += 40 - (distance * 10);
+
+      return score;
     };
 
-    const related = Object.keys(relatedTechs)
-      .filter(key => term.includes(key) || key.includes(term))
-      .flatMap(key => relatedTechs[key])
-      .filter(tech => allTechnologies.includes(tech));
+    // Levenshtein distance for fuzzy matching
+    const levenshteinDistance = (str1: string, str2: string): number => {
+      const matrix = Array(str2.length + 1).fill(null).map(() => Array(str1.length + 1).fill(null));
 
-    // Combine and deduplicate
-    const combined = [...new Set([...exactMatches, ...related])];
+      for (let i = 0; i <= str1.length; i += 1) matrix[0][i] = i;
+      for (let j = 0; j <= str2.length; j += 1) matrix[j][0] = j;
 
-    return combined
-      .filter(tech => !selectedTechs.includes(tech))
-      .slice(0, 8); // Limit suggestions
+      for (let j = 1; j <= str2.length; j += 1) {
+        for (let i = 1; i <= str1.length; i += 1) {
+          const indicator = str1[i - 1] === str2[j - 1] ? 0 : 1;
+          matrix[j][i] = Math.min(
+            matrix[j][i - 1] + 1,
+            matrix[j - 1][i] + 1,
+            matrix[j - 1][i - 1] + indicator
+          );
+        }
+      }
+
+      return matrix[str2.length][str1.length];
+    };
+
+    // Semantic technology relationships with confidence scores
+    const semanticRelationships: { [key: string]: { tech: string; confidence: number }[] } = {
+      'frontend': [
+        { tech: 'React', confidence: 0.9 }, { tech: 'Angular', confidence: 0.9 },
+        { tech: 'Vue.js', confidence: 0.8 }, { tech: 'Blazor', confidence: 0.7 },
+        { tech: 'TypeScript', confidence: 0.8 }, { tech: 'JavaScript', confidence: 0.9 }
+      ],
+      'backend': [
+        { tech: 'C#', confidence: 0.9 }, { tech: '.NET Core', confidence: 0.9 },
+        { tech: 'Node.js', confidence: 0.8 }, { tech: 'Python', confidence: 0.8 },
+        { tech: 'ASP.NET', confidence: 0.7 }
+      ],
+      'cloud': [
+        { tech: 'Azure', confidence: 0.9 }, { tech: 'AWS', confidence: 0.9 },
+        { tech: 'Kubernetes', confidence: 0.8 }, { tech: 'Docker', confidence: 0.8 }
+      ],
+      'ai': [
+        { tech: 'Python', confidence: 0.9 }, { tech: 'PyTorch', confidence: 0.9 },
+        { tech: 'Machine Learning', confidence: 0.9 }, { tech: 'OpenAI', confidence: 0.7 }
+      ],
+      'mobile': [
+        { tech: 'iOS', confidence: 0.8 }, { tech: 'Swift', confidence: 0.8 },
+        { tech: 'Android', confidence: 0.8 }, { tech: 'MAUI', confidence: 0.7 },
+        { tech: 'React Native', confidence: 0.7 }
+      ],
+      'database': [
+        { tech: 'SQL Server', confidence: 0.9 }, { tech: 'PostgreSQL', confidence: 0.8 },
+        { tech: 'MongoDB', confidence: 0.8 }, { tech: 'CosmosDB', confidence: 0.7 }
+      ]
+    };
+
+    // Intent detection from search terms
+    const detectIntent = (searchTerm: string): string[] => {
+      const intents: string[] = [];
+      const intentKeywords = {
+        'frontend': ['ui', 'interface', 'web', 'browser', 'client'],
+        'backend': ['server', 'api', 'service', 'logic'],
+        'cloud': ['deploy', 'scale', 'infrastructure', 'hosting'],
+        'ai': ['intelligent', 'smart', 'learning', 'neural', 'llm'],
+        'mobile': ['phone', 'app', 'native', 'cross-platform'],
+        'database': ['data', 'storage', 'query', 'db']
+      };
+
+      Object.entries(intentKeywords).forEach(([intent, keywords]) => {
+        if (keywords.some(keyword => searchTerm.includes(keyword))) {
+          intents.push(intent);
+        }
+      });
+
+      return intents;
+    };
+
+    // Score all technologies
+    const scoredTechs = allTechnologies.map(tech => ({
+      tech,
+      score: calculateSimilarity(tech, term)
+    }));
+
+    // Add semantic suggestions based on detected intents
+    const intents = detectIntent(term);
+    const semanticSuggestions = intents.flatMap(intent =>
+      semanticRelationships[intent]?.map(({ tech, confidence }) => ({
+        tech,
+        score: confidence * 50 // Convert confidence to score
+      })) || []
+    );
+
+    // Combine and sort by score
+    const allSuggestions = [...scoredTechs, ...semanticSuggestions]
+      .filter(({ tech, score }) =>
+        score > 10 && // Minimum relevance threshold
+        allTechnologies.includes(tech) &&
+        !selectedTechs.includes(tech)
+      )
+      .sort((a, b) => b.score - a.score)
+      .reduce((unique, current) => {
+        // Remove duplicates, keeping highest score
+        if (!unique.find(item => item.tech === current.tech)) {
+          unique.push(current);
+        }
+        return unique;
+      }, [] as { tech: string; score: number }[])
+      .slice(0, 8)
+      .map(({ tech }) => tech);
+
+    return allSuggestions;
   }, [searchTerm, allTechnologies, selectedTechs]);
 
   const handleTechSelect = (tech: string) => {
@@ -113,7 +204,7 @@ export default function TechSearch({ onFilterChange, allTechnologies }: TechSear
           }}
           onFocus={() => setShowSuggestions(true)}
           onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
-          placeholder="Search technologies (try 'AI', 'cloud', 'mobile'...)"
+          placeholder="Search with natural language (try 'smart apps', 'web development', 'data storage'...)"
           className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-slate-800 dark:text-slate-100"
         />
 
@@ -192,7 +283,7 @@ export default function TechSearch({ onFilterChange, allTechnologies }: TechSear
 
       {selectedTechs.length === 0 && (
         <p className="text-sm text-slate-500 dark:text-slate-400 mt-4">
-          💡 Try searching for technologies like &quot;React&quot;, &quot;Azure&quot;, &quot;AI&quot;, or &quot;mobile&quot; to see smart suggestions and filter Jason&apos;s experience.
+          🧠 AI-powered search understands natural language! Try &quot;web development&quot;, &quot;smart applications&quot;, &quot;cloud deployment&quot;, or even typos like &quot;reactt&quot; or &quot;azrue&quot;.
         </p>
       )}
     </motion.div>
