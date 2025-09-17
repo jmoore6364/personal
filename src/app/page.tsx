@@ -26,8 +26,9 @@ export default function Home() {
           </h2>
           <p className="text-lg text-slate-700 dark:text-slate-300 mb-12 max-w-3xl mx-auto">
             Strategic and execution-focused engineering leader with 25+ years of experience scaling SaaS platforms,
-            building high-performing distributed teams, and leading cloud-native transformations. Expert in architecting
-            resilient microservices and aligning engineering operations with business strategy.
+            building high-performing distributed teams, and leading cloud-native transformations. Expert in mentoring engineers
+            to maximize their impact, leading large-scale refactors, and creating memorable customer experiences through
+            well-structured, maintainable code and collaborative, test-driven environments.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <a
@@ -57,6 +58,12 @@ export default function Home() {
 
           {/* Quick Navigation */}
           <div className="flex flex-wrap justify-center gap-3 text-sm">
+            <a
+              href="#leadership"
+              className="px-4 py-2 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-full hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors"
+            >
+              🧑‍🏫 Leadership
+            </a>
             <a
               href="#experience"
               className="px-4 py-2 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-full hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors"
@@ -146,6 +153,123 @@ export default function Home() {
               Currently exploring AI/ML innovations with Python, PyTorch, and cloud ML platforms while
               leading engineering teams in modern technologies like .NET 9, Blazor, Azure, and Kubernetes.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership Philosophy */}
+      <section id="leadership" className="py-20 px-6 bg-white dark:bg-slate-900 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-12 text-center">
+            Leadership Philosophy
+          </h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white text-xl">🧑‍🏫</span>
+                </div>
+                <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100">
+                  Mentoring Excellence
+                </h3>
+              </div>
+              <p className="text-slate-600 dark:text-slate-400 mb-4">
+                I believe in mentoring engineers to maximize their performance and impact. My approach focuses on:
+              </p>
+              <ul className="text-slate-600 dark:text-slate-400 space-y-2">
+                <li>• <strong>Skill development</strong> through hands-on guidance and code reviews</li>
+                <li>• <strong>Career growth</strong> by identifying strengths and growth opportunities</li>
+                <li>• <strong>Technical ownership</strong> encouraging engineers to take pride in their work</li>
+                <li>• <strong>Knowledge sharing</strong> fostering a culture of continuous learning</li>
+              </ul>
+            </div>
+
+            <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white text-xl">🔧</span>
+                </div>
+                <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100">
+                  Technical Excellence
+                </h3>
+              </div>
+              <p className="text-slate-600 dark:text-slate-400 mb-4">
+                Experience with large-scale refactors, performance optimization, and reliability engineering:
+              </p>
+              <ul className="text-slate-600 dark:text-slate-400 space-y-2">
+                <li>• <strong>Large-scale refactors</strong> modernizing legacy systems safely</li>
+                <li>• <strong>Performance optimization</strong> identifying and resolving bottlenecks</li>
+                <li>• <strong>Reliability engineering</strong> building fault-tolerant distributed systems</li>
+                <li>• <strong>Code quality</strong> establishing standards and best practices</li>
+              </ul>
+            </div>
+
+            <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white text-xl">❤️</span>
+                </div>
+                <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100">
+                  Customer Focus
+                </h3>
+              </div>
+              <p className="text-slate-600 dark:text-slate-400 mb-4">
+                Passionate about creating memorable experiences for customers through:
+              </p>
+              <ul className="text-slate-600 dark:text-slate-400 space-y-2">
+                <li>• <strong>User-centric design</strong> prioritizing customer needs in technical decisions</li>
+                <li>• <strong>Performance optimization</strong> ensuring fast, reliable user experiences</li>
+                <li>• <strong>Quality assurance</strong> thorough testing and error handling</li>
+                <li>• <strong>Continuous improvement</strong> iterating based on user feedback</li>
+              </ul>
+            </div>
+
+            <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white text-xl">🤝</span>
+                </div>
+                <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100">
+                  Collaborative Culture
+                </h3>
+              </div>
+              <p className="text-slate-600 dark:text-slate-400 mb-4">
+                Appreciation for collaborative, test-driven environments where teams thrive:
+              </p>
+              <ul className="text-slate-600 dark:text-slate-400 space-y-2">
+                <li>• <strong>Test-driven development</strong> ensuring code reliability and maintainability</li>
+                <li>• <strong>Code reviews</strong> fostering knowledge sharing and quality</li>
+                <li>• <strong>Documentation</strong> creating well-documented, understandable systems</li>
+                <li>• <strong>Team ownership</strong> building shared responsibility for product success</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-12 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-lg p-8 text-center">
+            <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-100 mb-4">
+              Code Quality Standards
+            </h3>
+            <p className="text-lg text-slate-600 dark:text-slate-400 mb-6">
+              I believe in building well-structured, maintainable, well-documented code that stands the test of time
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-2">Clean Architecture</div>
+                <div className="text-sm text-slate-600 dark:text-slate-400">SOLID principles & design patterns</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-green-600 dark:text-green-400 mb-2">Test Coverage</div>
+                <div className="text-sm text-slate-600 dark:text-slate-400">Comprehensive unit & integration tests</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-purple-600 dark:text-purple-400 mb-2">Documentation</div>
+                <div className="text-sm text-slate-600 dark:text-slate-400">Clear, comprehensive technical docs</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-orange-600 dark:text-orange-400 mb-2">Performance</div>
+                <div className="text-sm text-slate-600 dark:text-slate-400">Optimized, scalable implementations</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

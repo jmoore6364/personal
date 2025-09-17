@@ -121,8 +121,8 @@ export async function POST(request: NextRequest) {
         mockResponse = "My core expertise includes C#/.NET (10/10), Azure/AWS cloud platforms (9/10), microservices architecture (9/10), and team leadership (10/10). I'm currently exploring AI/ML integration with Python and PyTorch. I'm also experienced in React, Angular, Blazor, and mobile development.";
       } else if (lastMessage.includes('ai') || lastMessage.includes('machine learning') || lastMessage.includes('ml')) {
         mockResponse = "I'm actively studying AI/ML implementation in enterprise applications using Python, PyTorch, Hugging Face, and cloud ML platforms. My current focus is on practical AI integration strategies and helping organizations adopt these technologies effectively.";
-      } else if (lastMessage.includes('team') || lastMessage.includes('leadership') || lastMessage.includes('manage')) {
-        mockResponse = "I've scaled engineering teams from 3 to 20+ engineers across multiple organizations. My approach focuses on building culture, establishing clear communication patterns, and aligning technical decisions with business goals. I believe in servant leadership and growing people.";
+      } else if (lastMessage.includes('team') || lastMessage.includes('leadership') || lastMessage.includes('manage') || lastMessage.includes('mentor')) {
+        mockResponse = "I've scaled engineering teams from 3 to 20+ engineers across multiple organizations. My leadership philosophy centers on mentoring engineers to maximize their performance and impact through hands-on guidance, code reviews, and fostering technical ownership. I'm passionate about creating collaborative, test-driven environments where teams thrive.";
       } else if (lastMessage.includes('cloud')) {
         mockResponse = "I have extensive experience with cloud-native architectures on both Azure and AWS. I've led migrations of legacy systems to microservices, implemented container orchestration with Kubernetes, and established DevOps practices for scalable deployments.";
       } else if (lastMessage.includes('contact') || lastMessage.includes('hire') || lastMessage.includes('available')) {
@@ -133,6 +133,12 @@ export async function POST(request: NextRequest) {
         mockResponse = "I'm open to discussing compensation based on the role, responsibilities, and company. My focus is on finding the right fit where I can add significant value through technical leadership and team scaling. Feel free to reach out at jasonwamoore@gmail.com to discuss specifics.";
       } else if (lastMessage.includes('remote') || lastMessage.includes('location') || lastMessage.includes('where')) {
         mockResponse = "I'm experienced with remote and hybrid work arrangements, having successfully led distributed teams across multiple organizations. I'm open to remote opportunities and have proven experience building strong team culture and communication in remote environments.";
+      } else if (lastMessage.includes('refactor') || lastMessage.includes('performance') || lastMessage.includes('reliability')) {
+        mockResponse = "I have extensive experience with large-scale refactors, performance optimization, and reliability engineering. I've modernized legacy systems safely, identified and resolved performance bottlenecks, and built fault-tolerant distributed systems with strong ownership over all aspects of the product area.";
+      } else if (lastMessage.includes('code quality') || lastMessage.includes('documentation') || lastMessage.includes('test')) {
+        mockResponse = "I'm passionate about building well-structured, maintainable, well-documented code. I believe in comprehensive test coverage, clean architecture following SOLID principles, and fostering collaborative, test-driven environments where quality is everyone's responsibility.";
+      } else if (lastMessage.includes('customer') || lastMessage.includes('user') || lastMessage.includes('experience')) {
+        mockResponse = "I'm passionate about creating memorable experiences for customers. My approach prioritizes user-centric design in technical decisions, performance optimization for fast user experiences, thorough quality assurance, and continuous improvement based on user feedback.";
       } else {
         mockResponse = "Hi! I'm Jason Moore, a Senior Software Engineer with 25+ years of experience in team leadership and cloud architecture. I'd be happy to discuss my background, technical expertise, or potential opportunities. What would you like to know?";
       }
