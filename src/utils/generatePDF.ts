@@ -91,7 +91,7 @@ export const generateResumePDF = () => {
     }
   ];
 
-  experiences.forEach((exp, index) => {
+  experiences.forEach((exp) => {
     if (yPosition > 250) {
       pdf.addPage();
       yPosition = 20;

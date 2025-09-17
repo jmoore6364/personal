@@ -313,7 +313,7 @@ export default function ExperienceTimeline() {
             variants={timelineVariants}
           ></motion.div>
 
-          {experiencesToShow.map((exp, index) => (
+          {experiencesToShow.map((exp) => (
             <motion.div
               key={`${exp.company}-${exp.period}-${filteredTechs.length}`}
               className="relative flex items-start mb-12"
