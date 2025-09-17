@@ -68,7 +68,7 @@ export default function Home() {
           <div className="prose prose-lg mx-auto text-slate-700 dark:text-slate-300">
             <p>
               With 25+ years of experience, I specialize in scaling SaaS platforms and building
-              high-performing distributed teams. I've led cloud-native transformations, architected
+              high-performing distributed teams. I&apos;ve led cloud-native transformations, architected
               resilient microservices, and consistently aligned engineering operations with business strategy.
             </p>
             <p>

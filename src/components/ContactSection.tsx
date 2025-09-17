@@ -3,11 +3,11 @@ export default function ContactSection() {
     <section className="py-20 px-6 bg-white dark:bg-slate-900">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-8">
-          Let's Connect
+          Let&apos;s Connect
         </h2>
         <p className="text-lg text-slate-600 dark:text-slate-400 mb-12">
           Interested in discussing engineering leadership, cloud architecture, or AI/ML innovations?
-          I'm always open to connecting with fellow technologists and exploring new opportunities.
+          I&apos;m always open to connecting with fellow technologists and exploring new opportunities.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
