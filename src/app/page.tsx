@@ -17,31 +17,106 @@ export default function Home() {
       <ParticleBackground />
       {/* Hero Section */}
       <section className="relative py-20 px-6 z-10">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            {/* Profile Photo */}
+            <div className="flex-shrink-0">
+              <div className="relative">
+                <div className="w-64 h-64 rounded-full overflow-hidden shadow-2xl border-4 border-white dark:border-slate-700 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900">
+                  <img
+                    src="/jason_profile.png"
+                    alt="Jason Moore - Senior Software Engineer"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                {/* Floating badges */}
+                <div className="absolute -top-2 -right-2 w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
+                  <span className="text-white text-2xl">🚀</span>
+                </div>
+                <div className="absolute -bottom-2 -left-2 w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center shadow-lg">
+                  <span className="text-white text-lg">💻</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="flex-1 text-center lg:text-left">
+              <div className="mb-6">
+                <h1 className="text-5xl md:text-6xl font-bold text-slate-900 dark:text-slate-100 mb-4">
+                  Jason Moore
+                </h1>
+                <h2 className="text-2xl md:text-3xl text-slate-600 dark:text-slate-400 mb-4">
+                  Senior Software Engineer & Technical Leader
+                </h2>
+                <div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-6">
+                  <span className="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">
+                    25+ Years Experience
+                  </span>
+                  <span className="px-4 py-2 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm font-medium">
+                    Team Leadership
+                  </span>
+                  <span className="px-4 py-2 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-sm font-medium">
+                    Cloud Architecture
+                  </span>
+                  <span className="px-4 py-2 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 rounded-full text-sm font-medium">
+                    AI/ML Integration
+                  </span>
+                </div>
+              </div>
+
+              <p className="text-lg text-slate-700 dark:text-slate-300 mb-8 max-w-3xl">
+                Strategic and execution-focused engineering leader with 25+ years of experience scaling SaaS platforms,
+                building high-performing distributed teams, and leading cloud-native transformations. Expert in mentoring engineers
+                to maximize their impact, leading large-scale refactors, and creating memorable customer experiences through
+                well-structured, maintainable code and collaborative, test-driven environments.
+              </p>
+
+              {/* Contact Info Row */}
+              <div className="flex flex-wrap justify-center lg:justify-start gap-6 mb-8 text-slate-600 dark:text-slate-400">
+                <div className="flex items-center gap-2">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                  </svg>
+                  <span>jasonwamoore@gmail.com</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                  </svg>
+                  <span>Available Remote</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
+                  </svg>
+                  <span>925-321-9772</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Action Buttons Section */}
+      <section className="relative py-12 px-6 z-10 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-slate-900 dark:text-slate-100 mb-6">
-            Jason Moore
-          </h1>
-          <h2 className="text-2xl md:text-3xl text-slate-600 dark:text-slate-400 mb-8">
-            Senior Software Engineer & Technical Leader
-          </h2>
-          <p className="text-lg text-slate-700 dark:text-slate-300 mb-12 max-w-3xl mx-auto">
-            Strategic and execution-focused engineering leader with 25+ years of experience scaling SaaS platforms,
-            building high-performing distributed teams, and leading cloud-native transformations. Expert in mentoring engineers
-            to maximize their impact, leading large-scale refactors, and creating memorable customer experiences through
-            well-structured, maintainable code and collaborative, test-driven environments.
-          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <a
               href="mailto:jasonwamoore@gmail.com"
-              className="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 font-semibold"
             >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+              </svg>
               Contact Me
             </a>
             <button
               onClick={generateResumePDF}
-              className="px-8 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+              className="px-8 py-4 bg-gradient-to-r from-green-600 to-green-700 text-white rounded-xl hover:from-green-700 hover:to-green-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 font-semibold"
             >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
               Download Resume
@@ -50,8 +125,11 @@ export default function Home() {
               href="https://www.linkedin.com/in/jmoore-engineer/"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-3 border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+              className="px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-xl hover:from-purple-700 hover:to-purple-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 font-semibold"
             >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clipRule="evenodd" />
+              </svg>
               LinkedIn Profile
             </a>
           </div>
@@ -60,43 +138,43 @@ export default function Home() {
           <div className="flex flex-wrap justify-center gap-3 text-sm">
             <a
               href="#leadership"
-              className="px-4 py-2 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-full hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors"
+              className="px-5 py-3 bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-700 dark:to-slate-800 text-slate-700 dark:text-slate-300 rounded-full hover:from-slate-200 hover:to-slate-300 dark:hover:from-slate-600 dark:hover:to-slate-700 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg font-medium"
             >
               🧑‍🏫 Leadership
             </a>
             <a
               href="#experience"
-              className="px-4 py-2 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-full hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors"
+              className="px-5 py-3 bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-700 dark:to-slate-800 text-slate-700 dark:text-slate-300 rounded-full hover:from-slate-200 hover:to-slate-300 dark:hover:from-slate-600 dark:hover:to-slate-700 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg font-medium"
             >
               📋 Experience
             </a>
             <a
               href="#projects"
-              className="px-4 py-2 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-full hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors"
+              className="px-5 py-3 bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-700 dark:to-slate-800 text-slate-700 dark:text-slate-300 rounded-full hover:from-slate-200 hover:to-slate-300 dark:hover:from-slate-600 dark:hover:to-slate-700 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg font-medium"
             >
               🚀 Projects
             </a>
             <a
               href="#skills"
-              className="px-4 py-2 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-full hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors"
+              className="px-5 py-3 bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-700 dark:to-slate-800 text-slate-700 dark:text-slate-300 rounded-full hover:from-slate-200 hover:to-slate-300 dark:hover:from-slate-600 dark:hover:to-slate-700 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg font-medium"
             >
               ⚡ Skills
             </a>
             <a
               href="#skills-assessment"
-              className="px-4 py-2 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-full hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors"
+              className="px-5 py-3 bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-700 dark:to-slate-800 text-slate-700 dark:text-slate-300 rounded-full hover:from-slate-200 hover:to-slate-300 dark:hover:from-slate-600 dark:hover:to-slate-700 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg font-medium"
             >
               📊 Skills Assessment
             </a>
             <a
               href="#live-metrics"
-              className="px-4 py-2 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-full hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors"
+              className="px-5 py-3 bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-700 dark:to-slate-800 text-slate-700 dark:text-slate-300 rounded-full hover:from-slate-200 hover:to-slate-300 dark:hover:from-slate-600 dark:hover:to-slate-700 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg font-medium"
             >
               ⚡ Live Metrics
             </a>
             <a
               href="#contact"
-              className="px-4 py-2 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-full hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors"
+              className="px-5 py-3 bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-700 dark:to-slate-800 text-slate-700 dark:text-slate-300 rounded-full hover:from-slate-200 hover:to-slate-300 dark:hover:from-slate-600 dark:hover:to-slate-700 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg font-medium"
             >
               💬 Contact
             </a>
