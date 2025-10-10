@@ -157,12 +157,12 @@ const experiences: Experience[] = [
     technologies: ["ASP.NET", "SQL", "C#", "JavaScript", "XML Web Services"]
   },
   {
-    title: "Software Engineer",
+    title: "Owner / CTO",
     company: "GatorStudios",
     industry: "Web Development Agency",
     period: "2002 - 2006",
     years: "4 years",
-    description: "Provided web development services for startups, creating online presence and ecommerce solutions. Helped companies with digital growth strategies and inventory management. Worked with clients including Amerimade, ComCity, and others.",
+    description: "Founded and led GatorStudios as Owner/CTO, managing a team of 8 developers and designers delivering diverse technology solutions. Worked on projects ranging from online retail platforms to building web hosting software, marketing solutions, and custom software for Amerimade and other clients.",
     technologies: ["ASP.NET", "Java", "Flash", "SQL", "C#", "JavaScript", "XML"]
   },
   {
