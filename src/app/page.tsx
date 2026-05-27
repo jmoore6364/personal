@@ -2,13 +2,13 @@
 
 import ExperienceTimeline from '@/components/ExperienceTimeline';
 import ProjectsShowcase from '@/components/ProjectsShowcase';
+import SideVenturesShowcase from '@/components/SideVenturesShowcase';
 import SkillsSection from '@/components/SkillsSection';
 import SkillAssessment from '@/components/SkillAssessment';
 import LiveMetrics from '@/components/LiveMetrics';
 import ContactSection from '@/components/ContactSection';
 import AIChatbot from '@/components/AIChatbot';
 import ParticleBackground from '@/components/ParticleBackground';
-import { generateResumePDF } from '@/utils/generatePDF';
 
 export default function Home() {
   return (
@@ -116,15 +116,16 @@ export default function Home() {
               </svg>
               Contact Me
             </a>
-            <button
-              onClick={generateResumePDF}
+            <a
+              href="/Jason Moore's Resume.docx"
+              download
               className="px-8 py-4 bg-gradient-to-r from-green-600 to-green-700 text-white rounded-xl hover:from-green-700 hover:to-green-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 font-semibold"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
               Download Resume
-            </button>
+            </a>
             <a
               href="https://www.linkedin.com/in/jmoore-engineer/"
               target="_blank"
@@ -393,6 +394,11 @@ export default function Home() {
       {/* Projects Showcase */}
       <div id="projects" className="relative z-10">
         <ProjectsShowcase />
+      </div>
+
+      {/* Side Ventures */}
+      <div id="ventures" className="relative z-10">
+        <SideVenturesShowcase />
       </div>
 
       {/* Skills Section */}

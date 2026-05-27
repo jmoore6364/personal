@@ -21,10 +21,31 @@ interface Experience {
 const experiences: Experience[] = [
   {
     title: "Senior Software Engineer",
+    company: "JDXpert",
+    industry: "HR Technology / Job Information Management",
+    period: "January 2026 - Present",
+    years: "5 months",
+    description: "JDXpert is the leading global platform for job information management, helping HR and compensation professionals create, govern, and synchronize job descriptions across enterprise systems. Trusted by 450+ organizations including 80+ Fortune 500 companies, JDXpert manages over 1 million job descriptions impacting 4+ million employees worldwide.",
+    details: {
+      overview: "At JDXpert, I work on a modern distributed architecture including .NET 10, Azure Kafka, Marten (event sourcing), Wolverine FX (messaging), Hot Chocolate (GraphQL), and CQRS patterns. My primary focus is designing and building a greenfield integration platform enabling bi-directional data synchronization with enterprise HRIS and ATS systems including Workday, Salesforce, ADP, UKG, and iCIMS.",
+      responsibilities: [
+        "Architecting a multi-tenant integration platform to replace legacy per-customer silos, enabling config-driven workflows for inbound and outbound data sync",
+        "Designing connector abstraction layer allowing teams to rapidly build new integrations with enterprise HR systems",
+        "Building workflow engine to orchestrate, fetch, transform, validate, and push operations across external APIs",
+        "Implementing event-sourced audit trails for full compliance and debugging visibility across tenant integrations",
+        "Leading Workday connector development as priority integration, supporting job profiles, positions, and compensation data",
+        "Integrating flatfile uploads via Fabric Lakehouse into a unified pipeline, standardizing both API and manual data ingestion",
+        "Contributing to platform migration from V2 architecture to JDX Plus, focusing on scalability and multi-tenant isolation"
+      ]
+    },
+    technologies: [".NET 10", "C#", "Azure Kafka", "Marten", "Wolverine FX", "Hot Chocolate", "GraphQL", "CQRS", "Event Sourcing", "Workday", "Salesforce", "ADP", "UKG", "iCIMS", "Microsoft Fabric", "Lakehouse"]
+  },
+  {
+    title: "Senior Software Engineer",
     company: "ONEFlight International",
     industry: "Private Aviation",
-    period: "June 2025 - Present",
-    years: "6 months",
+    period: "June 2025 - January 2026",
+    years: "7 months",
     description: "ONEFlight is a private aviation company that provides members with streamlined access to a global network of private jets through its proprietary platform, Book a Jet (BAJ). The platform simplifies private jet booking, enabling real-time availability, transparent pricing, and concierge-level travel experiences.",
     details: {
       overview: "At ONEFlight, I work across a modern cloud-based stack that includes .NET Core, C#, Blazor, Azure, microservices, PostgreSQL Server, and mobile technologies. My role involves architecting and leading development of scalable services, integrating third-party APIs for flight logistics, enhancing security and compliance, and optimizing the booking and payment workflows. I've also contributed to building customer-facing applications (web and mobile), and improving system reliability through monitoring, automation, and CI/CD pipelines.",

@@ -1,6 +1,5 @@
 "use client";
 
-import { generateResumePDF } from '@/utils/generatePDF';
 
 export default function ContactSection() {
   return (
@@ -51,12 +50,13 @@ export default function ContactSection() {
               </div>
               <div className="flex items-center justify-center">
                 <span className="text-slate-600 dark:text-slate-400 mr-3">📄</span>
-                <button
-                  onClick={generateResumePDF}
+                <a
+                  href="/Jason Moore's Resume.docx"
+                  download
                   className="text-blue-600 dark:text-blue-400 hover:underline"
                 >
-                  Download Resume (PDF)
-                </button>
+                  Download Resume
+                </a>
               </div>
             </div>
           </div>

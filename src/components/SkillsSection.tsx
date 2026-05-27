@@ -12,7 +12,7 @@ const skillCategories: SkillCategory[] = [
   },
   {
     title: "Backend & Cloud",
-    skills: ["C#", ".NET Core/.NET 9", "Azure", "AWS", "Azure AKS", "Kubernetes", "Docker", "Azure Functions", "gRPC", "Microservices", "PostgreSQL", "SQL Server", "CosmosDB", "MongoDB"],
+    skills: ["C#", ".NET Core/.NET 10", "Azure", "AWS", "Azure AKS", "Kubernetes", "Docker", "Azure Functions", "gRPC", "Microservices", "PostgreSQL", "SQL Server", "CosmosDB", "MongoDB"],
     color: "bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200"
   },
   {
