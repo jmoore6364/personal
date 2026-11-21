@@ -423,58 +423,6 @@ export default function LiveMetrics() {
             </div>
           </motion.div>
         </div>
-
-        {/* Live System Status */}
-        <motion.div
-          className="mt-8"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-          <div className="bg-white dark:bg-slate-900 rounded-lg p-6 shadow-sm border border-slate-200 dark:border-slate-700">
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-blue-500 rounded-lg flex items-center justify-center">
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100">Live System Status</h3>
-                  <p className="text-sm text-slate-500 dark:text-slate-400">Real-time portfolio metrics</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-2 text-green-600 dark:text-green-400">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="text-sm font-medium">All Systems Operational</span>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">99.9%</div>
-                <div className="text-sm text-slate-600 dark:text-slate-400">Uptime</div>
-                <div className="text-xs text-slate-500 dark:text-slate-500">Last 30 days</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">247ms</div>
-                <div className="text-sm text-slate-600 dark:text-slate-400">Response Time</div>
-                <div className="text-xs text-slate-500 dark:text-slate-500">Average</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">1.2K</div>
-                <div className="text-sm text-slate-600 dark:text-slate-400">Monthly Visitors</div>
-                <div className="text-xs text-slate-500 dark:text-slate-500">This month</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-orange-600 dark:text-orange-400 mb-2">94</div>
-                <div className="text-sm text-slate-600 dark:text-slate-400">Performance Score</div>
-                <div className="text-xs text-slate-500 dark:text-slate-500">Lighthouse</div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
