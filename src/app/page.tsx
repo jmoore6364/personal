@@ -55,7 +55,7 @@ export default function Home() {
                 </h2>
                 <div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-6">
                   <span className="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">
-                    30 Years Experience
+                    25+ Years Experience
                   </span>
                   <span className="px-4 py-2 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm font-medium">
                     Team Leadership
@@ -70,7 +70,7 @@ export default function Home() {
               </div>
 
               <p className="text-lg text-slate-700 dark:text-slate-300 mb-8 max-w-3xl">
-                AI-forward engineering leader with 30 years scaling SaaS platforms and 7+ years leading engineers and
+                AI-forward engineering leader with 25+ years scaling SaaS platforms and 7+ years leading engineers and
                 engineering managers. I build event-driven, distributed .NET systems that hold up under enterprise load,
                 and I lead teams the same way: design-first contracts, continuous flow, and AI-native development, with
                 Cursor and Claude Code in the daily loop and review gates that let AI multiply velocity without
@@ -224,7 +224,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">30</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">25+</div>
               <div className="text-slate-600 dark:text-slate-400">Years Experience</div>
             </div>
             <div>
@@ -252,7 +252,7 @@ export default function Home() {
           </h2>
           <div className="prose prose-lg mx-auto text-slate-700 dark:text-slate-300">
             <p>
-              With 30 years of experience, I specialize in scaling SaaS platforms and building
+              With 25+ years of experience, I specialize in scaling SaaS platforms and building
               high-performing distributed teams. I&apos;ve led cloud-native transformations, architected
               resilient microservices, and consistently aligned engineering operations with business strategy.
             </p>

@@ -7,10 +7,10 @@ interface ChatMessage {
 
 // Jason's comprehensive knowledge base
 const JASON_CONTEXT = `
-You are an AI assistant representing Jason Moore, a Senior Software Engineer and Technical Leader with 30 years of experience.
+You are an AI assistant representing Jason Moore, a Senior Software Engineer and Technical Leader with 25+ years of experience.
 
 BACKGROUND:
-- 30 years of software engineering experience and 7+ years of formal management experience
+- 25+ years of software engineering experience and 7+ years of formal management experience
 - Expert in scaling SaaS platforms and building high-performing distributed teams
 - Led cloud-native transformations and architected resilient microservices
 - Consistently aligned engineering operations with business strategy
@@ -123,7 +123,7 @@ export async function POST(request: NextRequest) {
 
       // Experience and background questions
       } else if (lastMessage.includes('experience') || lastMessage.includes('background')) {
-        mockResponse = "I have 30 years of software engineering and leadership experience, specializing in scaling SaaS platforms and building high-performing teams. I've led cloud-native transformations and consistently aligned engineering operations with business strategy across multiple organizations.";
+        mockResponse = "I have 25+ years of software engineering and leadership experience, specializing in scaling SaaS platforms and building high-performing teams. I've led cloud-native transformations and consistently aligned engineering operations with business strategy across multiple organizations.";
       } else if (lastMessage.includes('technology') || lastMessage.includes('tech') || lastMessage.includes('skills')) {
         mockResponse = "My core expertise includes C#/.NET (10/10), Azure/AWS cloud platforms (9/10), microservices architecture (9/10), and team leadership (10/10). I also lead AI-native development with Cursor and Claude Code. I'm also experienced in React, Angular, Blazor, and mobile development.";
       } else if (/\b(ai|ml|llms?|agents?|agentic|cursor|claude|copilot)\b/.test(lastMessage) || lastMessage.includes('machine learning')) {
@@ -147,7 +147,7 @@ export async function POST(request: NextRequest) {
       } else if (lastMessage.includes('customer') || lastMessage.includes('user') || lastMessage.includes('experience')) {
         mockResponse = "I'm passionate about creating memorable experiences for customers. My approach prioritizes user-centric design in technical decisions, performance optimization for fast user experiences, thorough quality assurance, and continuous improvement based on user feedback.";
       } else {
-        mockResponse = "Hi! I'm Jason Moore, a Senior Software Engineer with 30 years of experience in team leadership, cloud architecture, and AI-native development. I'd be happy to discuss my background, technical expertise, or potential opportunities. What would you like to know?";
+        mockResponse = "Hi! I'm Jason Moore, a Senior Software Engineer with 25+ years of experience in team leadership, cloud architecture, and AI-native development. I'd be happy to discuss my background, technical expertise, or potential opportunities. What would you like to know?";
       }
 
       return NextResponse.json({
