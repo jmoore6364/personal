@@ -23,14 +23,6 @@ interface Repository {
   url: string;
 }
 
-interface TechTrend {
-  technology: string;
-  trend: 'rising' | 'stable' | 'declining';
-  growthRate: number;
-  description: string;
-  relevance: 'high' | 'medium' | 'low';
-}
-
 // Mock data - replace with real API calls
 const mockGitHubStats: GitHubStats = {
   publicRepos: 24,
@@ -69,44 +61,6 @@ const mockRepositories: Repository[] = [
     language: "Python",
     lastCommit: "1 week ago",
     url: "#"
-  }
-];
-
-const techTrends: TechTrend[] = [
-  {
-    technology: "AI/ML Integration",
-    trend: "rising",
-    growthRate: 85,
-    description: "Enterprise adoption of AI continues to accelerate",
-    relevance: "high"
-  },
-  {
-    technology: "Edge Computing",
-    trend: "rising",
-    growthRate: 72,
-    description: "Processing data closer to the source for better performance",
-    relevance: "high"
-  },
-  {
-    technology: "Serverless Architecture",
-    trend: "stable",
-    growthRate: 45,
-    description: "Mature technology with steady enterprise adoption",
-    relevance: "high"
-  },
-  {
-    technology: "WebAssembly",
-    trend: "rising",
-    growthRate: 68,
-    description: "Enabling high-performance applications in browsers",
-    relevance: "medium"
-  },
-  {
-    technology: "Quantum Computing",
-    trend: "rising",
-    growthRate: 156,
-    description: "Early stage but showing promising developments",
-    relevance: "low"
   }
 ];
 
@@ -180,34 +134,6 @@ export default function LiveMetrics() {
     return num.toString();
   };
 
-  const getTrendIcon = (trend: TechTrend['trend']) => {
-    switch (trend) {
-      case 'rising': return (
-        <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
-        </svg>
-      );
-      case 'stable': return (
-        <svg className="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-        </svg>
-      );
-      case 'declining': return (
-        <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6L9 12.75l4.286-4.286a11.948 11.948 0 014.306 6.43l.776 2.898m0 0l3.182-5.511m-3.182 5.511l-5.511-3.182" />
-        </svg>
-      );
-    }
-  };
-
-  const getRelevanceColor = (relevance: TechTrend['relevance']) => {
-    switch (relevance) {
-      case 'high': return 'text-green-600 dark:text-green-400';
-      case 'medium': return 'text-yellow-600 dark:text-yellow-400';
-      case 'low': return 'text-gray-600 dark:text-gray-400';
-    }
-  };
-
   return (
     <section className="py-20 px-6 bg-slate-50 dark:bg-slate-800">
       <div className="max-w-7xl mx-auto">
@@ -222,7 +148,7 @@ export default function LiveMetrics() {
             Live Development Metrics
           </h2>
           <p className="text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto mb-6">
-            Real-time insights into my development activity, project contributions, and technology trend awareness.
+            Live GitHub activity and recent repositories.
           </p>
           <div className="flex items-center justify-center gap-4 text-sm text-slate-500 dark:text-slate-400">
             <span className="flex items-center gap-2">
@@ -257,12 +183,11 @@ export default function LiveMetrics() {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="max-w-2xl mx-auto">
           {/* GitHub Stats */}
           <motion.div
-            className="lg:col-span-1"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
@@ -333,91 +258,6 @@ export default function LiveMetrics() {
                       </div>
                     </motion.div>
                   ))}
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Technology Trends */}
-          <motion.div
-            className="lg:col-span-2"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <div className="bg-white dark:bg-slate-900 rounded-lg p-6 shadow-sm border border-slate-200 dark:border-slate-700">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100">Technology Trends</h3>
-                  <p className="text-sm text-slate-500 dark:text-slate-400">Current market insights</p>
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                {techTrends.map((trend, index) => (
-                  <motion.div
-                    key={trend.technology}
-                    className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    <div className="flex items-start justify-between mb-2">
-                      <div className="flex items-center gap-2">
-                        <span className="text-lg">{getTrendIcon(trend.trend)}</span>
-                        <h4 className="font-semibold text-slate-900 dark:text-slate-100">
-                          {trend.technology}
-                        </h4>
-                        <span className={`text-xs px-2 py-1 rounded-full font-medium ${getRelevanceColor(trend.relevance)}`}>
-                          {trend.relevance.toUpperCase()}
-                        </span>
-                      </div>
-                      <div className="text-right">
-                        <div className="text-sm font-bold text-slate-900 dark:text-slate-100">
-                          +{trend.growthRate}%
-                        </div>
-                        <div className="text-xs text-slate-500 dark:text-slate-400">growth</div>
-                      </div>
-                    </div>
-                    <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">
-                      {trend.description}
-                    </p>
-                    <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
-                      <motion.div
-                        className={`h-2 rounded-full ${
-                          trend.relevance === 'high' ? 'bg-green-500' :
-                          trend.relevance === 'medium' ? 'bg-yellow-500' :
-                          'bg-gray-500'
-                        }`}
-                        initial={{ width: 0 }}
-                        animate={{ width: `${Math.min(trend.growthRate, 100)}%` }}
-                        transition={{ duration: 1, delay: index * 0.1 }}
-                      />
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-
-              <div className="mt-6 pt-6 border-t border-slate-200 dark:border-slate-700">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="text-center p-4 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-lg">
-                    <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">12</div>
-                    <div className="text-sm text-slate-600 dark:text-slate-400">Technologies Tracking</div>
-                  </div>
-                  <div className="text-center p-4 bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 rounded-lg">
-                    <div className="text-2xl font-bold text-green-600 dark:text-green-400">8</div>
-                    <div className="text-sm text-slate-600 dark:text-slate-400">Currently Learning</div>
-                  </div>
-                  <div className="text-center p-4 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-lg">
-                    <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">15</div>
-                    <div className="text-sm text-slate-600 dark:text-slate-400">Certifications</div>
-                  </div>
                 </div>
               </div>
             </div>
