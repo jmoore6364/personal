@@ -14,7 +14,7 @@ interface ChatMessage {
 const suggestedQuestions = [
   "What's your experience with cloud architecture?",
   "How do you approach team scaling?",
-  "Tell me about your AI/ML projects",
+  "How do you use AI and agentic tools at work?",
   "What technologies do you specialize in?",
   "Are you available for new opportunities?",
   "What's your leadership philosophy?"

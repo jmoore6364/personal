@@ -10,23 +10,30 @@ const JASON_CONTEXT = `
 You are an AI assistant representing Jason Moore, a Senior Software Engineer and Technical Leader with 25+ years of experience.
 
 BACKGROUND:
-- 25+ years of software engineering and leadership experience
+- 25+ years of software engineering experience and 7+ years of formal management experience
 - Expert in scaling SaaS platforms and building high-performing distributed teams
 - Led cloud-native transformations and architected resilient microservices
 - Consistently aligned engineering operations with business strategy
 
 CURRENT ROLE & EXPERTISE:
 - Senior Software Engineer & Technical Leader
-- Specializes in team scaling (3-20+ engineers), cloud architecture, and AI/ML integration
-- Expert in C#, .NET Core/.NET 9, Azure, AWS, microservices, and modern web technologies
-- Currently exploring AI/ML with Python, PyTorch, and cloud ML platforms
+- Specializes in team scaling (3-20+ engineers), cloud architecture, and AI-native development
+- Expert in C#, .NET Core/.NET 10, Azure, AWS, microservices, and modern web technologies
+
+AI & AGENTIC ENGINEERING:
+- Leads AI-native development in practice: Cursor and Claude Code in the daily loop, plus GitHub Copilot
+- Design-first specs that give AI the context it needs; review gates and architectural guardrails on AI-generated code
+- At JDXpert: leads the team's AI-assisted development practice, using AI to accelerate connector and workflow development
+- At ONEFlight: introduced and championed AI-assisted development with Cursor and Claude, speeding up delivery across the team
+- Built LLM-powered page generation into the DojoSage website builder (own production SaaS)
+- Also studying ML/LLMs with Python, PyTorch, Hugging Face, LangChain, and RAG
 
 KEY TECHNOLOGIES:
 Leadership & Management: Team Leadership (10/10), Technical Architecture (10/10), Product Strategy (9/10)
 Backend: C# (10/10), .NET Core/.NET 9 (10/10), Azure (9/10), AWS (8/10), Microservices (9/10)
 Frontend: Blazor (9/10), React (8/10), Angular (8/10), iOS/Swift (7/10), MAUI (8/10)
 DevOps: Kubernetes (8/10), Docker (9/10), Azure DevOps (9/10), Infrastructure as Code (8/10)
-AI/ML: AI/ML Integration (7/10), Python (7/10), LLMs & AI Tools (8/10)
+AI/ML: AI-Assisted & Agentic Development (9/10), AI/ML Integration (7/10), Python (7/10)
 Database: SQL Server (9/10), PostgreSQL (8/10), NoSQL (8/10)
 
 CAREER HIGHLIGHTS:
@@ -37,14 +44,14 @@ CAREER HIGHLIGHTS:
 - Aligned engineering with business strategy across multiple companies
 
 RECENT EXPERIENCE:
-- ONEFlight International (2023-2024): Sr. Software Engineer, scaled operations platform
-- Codeup.com (2022-2023): Lead Instructor, trained 100+ developers
-- ORHP (2021-2022): Software Architect, optimized home warranty operations
-- NB Pro (2019-2021): Senior Developer, built e-commerce platform
-- Various consulting and leadership roles from 2004-2019
+- JDXpert (January 2026-Present): Senior Software Engineer, architecting a greenfield multi-tenant integration platform (.NET 10, Wolverine FX, Marten, Kafka) syncing with Workday, Salesforce, ADP, UKG, and iCIMS
+- ONEFlight International (June 2025-January 2026): Senior Software Engineer on the Book a Jet private aviation platform (Blazor, MAUI, gRPC, Azure AKS)
+- QuinStreet (June 2020-June 2025): Senior Software Engineer & Technical Lead on the QuinStreet Routing Platform
+- Sephora (June 2018-June 2020): Senior Software Engineer / Technical Lead on e-commerce and in-store platforms
+- Earlier engineering and leadership roles back to the 1990s
 
 CURRENT INTERESTS:
-- AI/ML implementation in enterprise applications
+- AI-native development and agentic coding workflows
 - Cloud-native architecture patterns
 - Team leadership and scaling strategies
 - Modern development practices and DevOps
@@ -118,17 +125,17 @@ export async function POST(request: NextRequest) {
       } else if (lastMessage.includes('experience') || lastMessage.includes('background')) {
         mockResponse = "I have 25+ years of software engineering and leadership experience, specializing in scaling SaaS platforms and building high-performing teams. I've led cloud-native transformations and consistently aligned engineering operations with business strategy across multiple organizations.";
       } else if (lastMessage.includes('technology') || lastMessage.includes('tech') || lastMessage.includes('skills')) {
-        mockResponse = "My core expertise includes C#/.NET (10/10), Azure/AWS cloud platforms (9/10), microservices architecture (9/10), and team leadership (10/10). I'm currently exploring AI/ML integration with Python and PyTorch. I'm also experienced in React, Angular, Blazor, and mobile development.";
-      } else if (lastMessage.includes('ai') || lastMessage.includes('machine learning') || lastMessage.includes('ml')) {
-        mockResponse = "I'm actively studying AI/ML implementation in enterprise applications using Python, PyTorch, Hugging Face, and cloud ML platforms. My current focus is on practical AI integration strategies and helping organizations adopt these technologies effectively.";
+        mockResponse = "My core expertise includes C#/.NET (10/10), Azure/AWS cloud platforms (9/10), microservices architecture (9/10), and team leadership (10/10). I also lead AI-native development with Cursor and Claude Code. I'm also experienced in React, Angular, Blazor, and mobile development.";
+      } else if (/\b(ai|ml|llms?|agents?|agentic|cursor|claude|copilot)\b/.test(lastMessage) || lastMessage.includes('machine learning')) {
+        mockResponse = "I lead AI-native development in practice. At JDXpert I lead the team's AI-assisted development practice, with Cursor and Claude in the daily loop to accelerate connector and workflow development, while spec-first design, review gates, and architectural guardrails keep quality intact. At ONEFlight I introduced and championed Cursor and Claude across the team. I've also built LLM-powered page generation into DojoSage, my own SaaS product.";
       } else if (lastMessage.includes('team') || lastMessage.includes('leadership') || lastMessage.includes('manage') || lastMessage.includes('mentor')) {
         mockResponse = "I've scaled engineering teams from 3 to 20+ engineers across multiple organizations. My leadership philosophy centers on mentoring engineers to maximize their performance and impact through hands-on guidance, code reviews, and fostering technical ownership. I'm passionate about creating collaborative, test-driven environments where teams thrive.";
       } else if (lastMessage.includes('cloud')) {
         mockResponse = "I have extensive experience with cloud-native architectures on both Azure and AWS. I've led migrations of legacy systems to microservices, implemented container orchestration with Kubernetes, and established DevOps practices for scalable deployments.";
       } else if (lastMessage.includes('contact') || lastMessage.includes('hire') || lastMessage.includes('available')) {
-        mockResponse = "I'm always interested in discussing new opportunities! You can reach me at jasonwamoore@gmail.com or (925) 321-9772. I'm particularly drawn to roles involving engineering leadership, cloud architecture, or AI/ML integration projects.";
+        mockResponse = "I'm always interested in discussing new opportunities! You can reach me at jasonwamoore@gmail.com or (925) 321-9772. I'm particularly drawn to roles involving engineering leadership, cloud architecture, or AI-native development.";
       } else if (lastMessage.includes('project') || lastMessage.includes('work')) {
-        mockResponse = "Recently, I worked at ONEFlight International scaling their operations platform, and at Codeup.com training 100+ developers. I've built everything from e-commerce platforms to home warranty systems, always focusing on scalable, maintainable solutions.";
+        mockResponse = "I'm currently at JDXpert architecting a greenfield multi-tenant integration platform that syncs with Workday, Salesforce, ADP, UKG, and iCIMS, and leading the team's AI-assisted development practice. Before that I worked on ONEFlight's Book a Jet private aviation platform. I also run DojoSage, my own SaaS for martial arts schools.";
       } else if (lastMessage.includes('salary') || lastMessage.includes('rate') || lastMessage.includes('compensation')) {
         mockResponse = "I'm open to discussing compensation based on the role, responsibilities, and company. My focus is on finding the right fit where I can add significant value through technical leadership and team scaling. Feel free to reach out at jasonwamoore@gmail.com to discuss specifics.";
       } else if (lastMessage.includes('remote') || lastMessage.includes('location') || lastMessage.includes('where')) {
@@ -140,7 +147,7 @@ export async function POST(request: NextRequest) {
       } else if (lastMessage.includes('customer') || lastMessage.includes('user') || lastMessage.includes('experience')) {
         mockResponse = "I'm passionate about creating memorable experiences for customers. My approach prioritizes user-centric design in technical decisions, performance optimization for fast user experiences, thorough quality assurance, and continuous improvement based on user feedback.";
       } else {
-        mockResponse = "Hi! I'm Jason Moore, a Senior Software Engineer with 25+ years of experience in team leadership and cloud architecture. I'd be happy to discuss my background, technical expertise, or potential opportunities. What would you like to know?";
+        mockResponse = "Hi! I'm Jason Moore, a Senior Software Engineer with 25+ years of experience in team leadership, cloud architecture, and AI-native development. I'd be happy to discuss my background, technical expertise, or potential opportunities. What would you like to know?";
       }
 
       return NextResponse.json({

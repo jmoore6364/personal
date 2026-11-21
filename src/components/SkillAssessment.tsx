@@ -41,7 +41,7 @@ const skills: Skill[] = [
   // AI & Emerging Tech
   { name: "AI/ML Integration", level: 7, category: "AI/ML", description: "Python, PyTorch, OpenAI, and practical implementations", yearsExperience: 2, color: "from-red-500 to-red-600" },
   { name: "Python", level: 7, category: "AI/ML", description: "Flask, ML libraries, and automation scripts", yearsExperience: 3, color: "from-red-500 to-red-600" },
-  { name: "LLMs & AI Tools", level: 8, category: "AI/ML", description: "Claude, OpenAI, Cursor, and development acceleration", yearsExperience: 1, color: "from-red-500 to-red-600" },
+  { name: "AI-Assisted & Agentic Development", level: 9, category: "AI/ML", description: "Cursor, Claude Code, Copilot, spec-first context engineering, and review gates on AI-generated code", yearsExperience: 2, color: "from-red-500 to-red-600" },
 
   // Databases
   { name: "SQL Server", level: 9, category: "Database", description: "Complex queries, optimization, and architecture", yearsExperience: 20, color: "from-teal-500 to-teal-600" },

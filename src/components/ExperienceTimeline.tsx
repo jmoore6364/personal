@@ -24,21 +24,20 @@ const experiences: Experience[] = [
     company: "JDXpert",
     industry: "HR Technology / Job Information Management",
     period: "January 2026 - Present",
-    years: "5 months",
+    years: "11 months",
     description: "JDXpert is the leading global platform for job information management, helping HR and compensation professionals create, govern, and synchronize job descriptions across enterprise systems. Trusted by 450+ organizations including 80+ Fortune 500 companies, JDXpert manages over 1 million job descriptions impacting 4+ million employees worldwide.",
     details: {
-      overview: "At JDXpert, I work on a modern distributed architecture including .NET 10, Azure Kafka, Marten (event sourcing), Wolverine FX (messaging), Hot Chocolate (GraphQL), and CQRS patterns. My primary focus is designing and building a greenfield integration platform enabling bi-directional data synchronization with enterprise HRIS and ATS systems including Workday, Salesforce, ADP, UKG, and iCIMS.",
+      overview: "Architecting a greenfield, multi-tenant integration platform on .NET 10, Wolverine FX, and Marten (event sourcing/CQRS on PostgreSQL), with Azure Service Bus, Kafka, and Hot Chocolate GraphQL. It replaces legacy per-customer silos with config-driven bi-directional sync to Workday, Salesforce, ADP, UKG, and iCIMS. I also lead the team's AI-assisted development practice.",
       responsibilities: [
-        "Architecting a multi-tenant integration platform to replace legacy per-customer silos, enabling config-driven workflows for inbound and outbound data sync",
-        "Designing connector abstraction layer allowing teams to rapidly build new integrations with enterprise HR systems",
-        "Building workflow engine to orchestrate, fetch, transform, validate, and push operations across external APIs",
-        "Implementing event-sourced audit trails for full compliance and debugging visibility across tenant integrations",
-        "Leading Workday connector development as priority integration, supporting job profiles, positions, and compensation data",
-        "Integrating flatfile uploads via Fabric Lakehouse into a unified pipeline, standardizing both API and manual data ingestion",
-        "Contributing to platform migration from V2 architecture to JDX Plus, focusing on scalability and multi-tenant isolation"
+        "Lead AI-assisted development practice on the team, with Cursor and Claude in the daily loop, using AI to accelerate connector and workflow development while spec-first design, review gates, and architectural guardrails keep quality and architecture intact",
+        "Own end-to-end design of the connector abstraction layer and API contracts, enabling other teams to ship new enterprise integrations against a spec-first interface rather than bespoke code",
+        "Lead Workday connector development as the priority integration (job profiles, positions, and compensation data), setting patterns the remaining connectors follow",
+        "Built the workflow engine orchestrating fetch, transform, validate, and push across external APIs, with event-sourced audit trails for compliance and cross-tenant debugging",
+        "Unified flatfile ingestion via Fabric Lakehouse with API-based sync into a single pipeline",
+        "Key contributor to the V2 to JDX Plus migration, focused on scalability and multi-tenant isolation"
       ]
     },
-    technologies: [".NET 10", "C#", "Azure Kafka", "Marten", "Wolverine FX", "Hot Chocolate", "GraphQL", "CQRS", "Event Sourcing", "Workday", "Salesforce", "ADP", "UKG", "iCIMS", "Microsoft Fabric", "Lakehouse"]
+    technologies: ["Cursor", "Claude", "AI-Assisted Development", ".NET 10", "C#", "PostgreSQL", "Azure Service Bus", "Azure Kafka", "Marten", "Wolverine FX", "Hot Chocolate", "GraphQL", "CQRS", "Event Sourcing", "Workday", "Salesforce", "ADP", "UKG", "iCIMS", "Microsoft Fabric", "Lakehouse"]
   },
   {
     title: "Senior Software Engineer",
@@ -50,8 +49,8 @@ const experiences: Experience[] = [
     details: {
       overview: "At ONEFlight, I work across a modern cloud-based stack that includes .NET Core, C#, Blazor, Azure, microservices, PostgreSQL Server, and mobile technologies. My role involves architecting and leading development of scalable services, integrating third-party APIs for flight logistics, enhancing security and compliance, and optimizing the booking and payment workflows. I've also contributed to building customer-facing applications (web and mobile), and improving system reliability through monitoring, automation, and CI/CD pipelines.",
       responsibilities: [
+        "Introduced and championed AI-assisted development with Cursor and Claude, speeding up delivery across the team",
         "Leading team to build new features in MAUI Blazor hybrid mobile app connecting clients, pilots, concierge and crew",
-        "Introduced AI concepts and tools like Cursor and Claude to accelerate development efforts",
         "Managing web accessibility improvements through SiteImprove by identifying issues and creating work items",
         "Maintaining and developing rich, robust enterprise-grade streamed gRPC APIs",
         "Building interactions with Blazor Web Assembly and SignalR backend for seamless user updates",
@@ -59,7 +58,7 @@ const experiences: Experience[] = [
         "Gaining hands-on experience with MAUI for iOS and Android development"
       ]
     },
-    technologies: [".NET Core", "C#", "Blazor", "Blazor WebAssembly", "MAUI", "Azure AKS", "Kubernetes", "PostgreSQL", "Azure Cosmos Postgres", "CosmosDB", "SignalR", "gRPC", "Bicep", "PowerShell", "Azure Key Vault", "VNET", "Azure Storage", "Managed Identity", "Notification Hub", "SiteImprove"]
+    technologies: ["Cursor", "Claude", "AI-Assisted Development", ".NET Core", "C#", "Blazor", "Blazor WebAssembly", "MAUI", "Azure AKS", "Kubernetes", "PostgreSQL", "Azure Cosmos Postgres", "CosmosDB", "SignalR", "gRPC", "Bicep", "PowerShell", "Azure Key Vault", "VNET", "Azure Storage", "Managed Identity", "Notification Hub", "SiteImprove"]
   },
   {
     title: "Senior Software Engineer & Technical Lead",

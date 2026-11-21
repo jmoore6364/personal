@@ -1,6 +1,7 @@
 "use client";
 
 import ExperienceTimeline from '@/components/ExperienceTimeline';
+import AIEngineeringSection from '@/components/AIEngineeringSection';
 import ProjectsShowcase from '@/components/ProjectsShowcase';
 import SideVenturesShowcase from '@/components/SideVenturesShowcase';
 import SkillsSection from '@/components/SkillsSection';
@@ -63,16 +64,17 @@ export default function Home() {
                     Cloud Architecture
                   </span>
                   <span className="px-4 py-2 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 rounded-full text-sm font-medium">
-                    AI/ML Integration
+                    AI-Native Engineering
                   </span>
                 </div>
               </div>
 
               <p className="text-lg text-slate-700 dark:text-slate-300 mb-8 max-w-3xl">
-                Strategic and execution-focused engineering leader with 25+ years of experience scaling SaaS platforms,
-                building high-performing distributed teams, and leading cloud-native transformations. Expert in mentoring engineers
-                to maximize their impact, leading large-scale refactors, and creating memorable customer experiences through
-                well-structured, maintainable code and collaborative, test-driven environments.
+                AI-forward engineering leader with 25+ years scaling SaaS platforms and 7+ years leading engineers and
+                engineering managers. I build event-driven, distributed .NET systems that hold up under enterprise load,
+                and I lead teams the same way: design-first contracts, continuous flow, and AI-native development, with
+                Cursor and Claude Code in the daily loop and review gates that let AI multiply velocity without
+                outrunning quality.
               </p>
 
               {/* Contact Info Row */}
@@ -105,7 +107,7 @@ export default function Home() {
       {/* Action Buttons Section */}
       <section className="relative py-12 px-6 z-10 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap gap-4 justify-center mb-8">
             <a
               href="mailto:jasonwamoore@gmail.com"
               className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 font-semibold"
@@ -137,10 +139,30 @@ export default function Home() {
               </svg>
               LinkedIn Profile
             </a>
+            <a
+              href="https://github.com/jmoore6364"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 bg-gradient-to-r from-slate-700 to-slate-900 text-white rounded-xl hover:from-slate-600 hover:to-slate-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 font-semibold border border-slate-600"
+            >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+              GitHub
+            </a>
           </div>
 
           {/* Quick Navigation */}
           <div className="flex flex-wrap justify-center gap-3 text-sm">
+            <a
+              href="#ai-engineering"
+              className="px-5 py-3 bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-700 dark:to-slate-800 text-slate-700 dark:text-slate-300 rounded-full hover:from-slate-200 hover:to-slate-300 dark:hover:from-slate-600 dark:hover:to-slate-700 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg font-medium flex items-center gap-2"
+            >
+              <svg className="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z" />
+              </svg>
+              AI Engineering
+            </a>
             <a
               href="#leadership"
               className="px-5 py-3 bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-700 dark:to-slate-800 text-slate-700 dark:text-slate-300 rounded-full hover:from-slate-200 hover:to-slate-300 dark:hover:from-slate-600 dark:hover:to-slate-700 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg font-medium flex items-center gap-2"
@@ -228,6 +250,11 @@ export default function Home() {
         </div>
       </section>
 
+      {/* AI & Agentic Engineering */}
+      <div id="ai-engineering" className="relative z-10">
+        <AIEngineeringSection />
+      </div>
+
       {/* About Section */}
       <section className="py-20 px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
@@ -254,8 +281,10 @@ export default function Home() {
               a culture of delivery, innovation, and continuous improvement.
             </p>
             <p>
-              Currently exploring AI/ML innovations with Python, PyTorch, and cloud ML platforms while
-              leading engineering teams in modern technologies like .NET 9, Blazor, Azure, and Kubernetes.
+              I lead AI-native development in practice, not theory: Cursor and Claude Code in the daily loop,
+              design-first specs that give AI the context it needs, and review gates and architectural guardrails
+              on AI-generated code. I&apos;ve introduced AI tooling to engineering teams at two companies and built
+              LLM-powered features into a production SaaS product.
             </p>
           </div>
         </div>

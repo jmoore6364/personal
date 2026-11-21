@@ -26,8 +26,8 @@ const skillCategories: SkillCategory[] = [
     color: "bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200"
   },
   {
-    title: "AI/ML & Emerging Tech",
-    skills: ["Python", "PyTorch", "Hugging Face", "LangChain", "Azure AI Studio", "OpenAI", "RAG", "Prompt Engineering", "GitHub Copilot", "Cursor", "Claude AI"],
+    title: "AI-Assisted & Agentic Engineering",
+    skills: ["Claude Code", "Cursor", "GitHub Copilot", "Agentic Coding Workflows", "Spec-First Prompt & Context Engineering", "AI-Generated Code Review Gates", "AI Tooling Adoption & Team Enablement", "LLM-Powered Product Features", "Python", "PyTorch", "Hugging Face", "LangChain", "Azure AI Studio", "OpenAI", "RAG"],
     color: "bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200"
   },
   {
