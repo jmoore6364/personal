@@ -33,7 +33,7 @@ Leadership & Management: Team Leadership (10/10), Technical Architecture (10/10)
 Backend: C# (10/10), .NET Core/.NET 9 (10/10), Azure (9/10), AWS (8/10), Microservices (9/10)
 Frontend: Blazor (9/10), React (8/10), Angular (8/10), iOS/Swift (7/10), MAUI (8/10)
 DevOps: Kubernetes (8/10), Docker (9/10), Azure DevOps (9/10), Infrastructure as Code (8/10)
-AI/ML: AI-Assisted & Agentic Development (8/10), AI/ML Integration (7/10), Python (7/10)
+AI/ML: AI-Assisted & Agentic Development (9/10), AI/ML Integration (7/10), Python (7/10)
 Database: SQL Server (9/10), PostgreSQL (8/10), NoSQL (8/10)
 
 CAREER HIGHLIGHTS:
