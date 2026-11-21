@@ -14,26 +14,7 @@ interface GitHubRepo {
   language: string | null;
   pushed_at: string;
   html_url: string;
-  private?: boolean;
-  owner?: { login: string };
 }
-
-// Repositories shown under "Recent Repositories", by name. Only these are ever
-// listed, so no other private repository name can reach the public site.
-const FEATURED_REPOS = ['dojo', 'doorflight', 'mealkit'];
-
-// Shown when live data for the featured repositories is unavailable (they are
-// private, so this needs a GITHUB_TOKEN that can read them).
-const featuredFallback = FEATURED_REPOS.map(name => ({
-  name,
-  description: '',
-  stars: 0,
-  forks: 0,
-  language: 'Unknown',
-  lastCommit: '',
-  url: '',
-  private: true
-}));
 
 // Cache duration in seconds (5 minutes)
 const CACHE_DURATION = 300;
@@ -88,37 +69,16 @@ export async function GET() {
     // Calculate total stars
     const totalStars = reposData.reduce((sum, repo) => sum + repo.stargazers_count, 0);
 
-    // Featured repositories: with a token, read live details for them
-    // (private ones included); otherwise list them without live details.
-    let repositories = featuredFallback;
-    if (token) {
-      try {
-        const ownedResponse = await fetch('https://api.github.com/user/repos?affiliation=owner&sort=pushed&per_page=100', {
-          headers,
-          next: { revalidate: CACHE_DURATION }
-        });
-        if (ownedResponse.ok) {
-          const owned: GitHubRepo[] = await ownedResponse.json();
-          const featured = owned.filter(repo =>
-            repo.owner?.login === username && FEATURED_REPOS.includes(repo.name)
-          );
-          if (featured.length > 0) {
-            repositories = featured.map(repo => ({
-              name: repo.name,
-              description: repo.description || '',
-              stars: repo.stargazers_count,
-              forks: repo.forks_count,
-              language: repo.language || 'Unknown',
-              lastCommit: formatTimeAgo(repo.pushed_at),
-              url: repo.private ? '' : repo.html_url,
-              private: Boolean(repo.private)
-            }));
-          }
-        }
-      } catch (error) {
-        console.warn('Could not fetch featured repositories:', error);
-      }
-    }
+    // Format repository data
+    const repositories = reposData.slice(0, 6).map(repo => ({
+      name: repo.name,
+      description: repo.description || 'No description available',
+      stars: repo.stargazers_count,
+      forks: repo.forks_count,
+      language: repo.language || 'Unknown',
+      lastCommit: formatTimeAgo(repo.pushed_at),
+      url: repo.html_url
+    }));
 
     // Try to fetch contribution data (this requires GraphQL API)
     let contributionsThisYear = 0;
@@ -188,7 +148,35 @@ export async function GET() {
       totalStars: 156,
       totalCommits: 2847,
       contributionsThisYear: 342,
-      repositories: featuredFallback,
+      repositories: [
+        {
+          name: "cloud-migration-toolkit",
+          description: "Automated tools for migrating legacy applications to cloud-native architectures",
+          stars: 42,
+          forks: 8,
+          language: "C#",
+          lastCommit: "2 days ago",
+          url: "#"
+        },
+        {
+          name: "microservices-patterns",
+          description: "Implementation patterns for scalable microservices architecture",
+          stars: 38,
+          forks: 12,
+          language: "TypeScript",
+          lastCommit: "5 days ago",
+          url: "#"
+        },
+        {
+          name: "ai-integration-examples",
+          description: "Practical examples of AI/ML integration in enterprise applications",
+          stars: 29,
+          forks: 6,
+          language: "Python",
+          lastCommit: "1 week ago",
+          url: "#"
+        }
+      ],
       lastUpdated: new Date().toISOString(),
       error: 'Using mock data - GitHub API unavailable'
     };
