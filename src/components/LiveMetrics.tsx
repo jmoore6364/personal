@@ -23,47 +23,6 @@ interface Repository {
   url: string;
 }
 
-// Mock data - replace with real API calls
-const mockGitHubStats: GitHubStats = {
-  publicRepos: 24,
-  followers: 127,
-  following: 89,
-  totalStars: 156,
-  totalCommits: 2847,
-  contributionsThisYear: 342,
-  lastUpdated: new Date().toISOString()
-};
-
-const mockRepositories: Repository[] = [
-  {
-    name: "cloud-migration-toolkit",
-    description: "Automated tools for migrating legacy applications to cloud-native architectures",
-    stars: 42,
-    forks: 8,
-    language: "C#",
-    lastCommit: "2 days ago",
-    url: "#"
-  },
-  {
-    name: "microservices-patterns",
-    description: "Implementation patterns for scalable microservices architecture",
-    stars: 38,
-    forks: 12,
-    language: "TypeScript",
-    lastCommit: "5 days ago",
-    url: "#"
-  },
-  {
-    name: "ai-integration-examples",
-    description: "Practical examples of AI/ML integration in enterprise applications",
-    stars: 29,
-    forks: 6,
-    language: "Python",
-    lastCommit: "1 week ago",
-    url: "#"
-  }
-];
-
 const languageColors: { [key: string]: string } = {
   "C#": "bg-purple-500",
   "TypeScript": "bg-blue-500",
@@ -74,8 +33,8 @@ const languageColors: { [key: string]: string } = {
 };
 
 export default function LiveMetrics() {
-  const [gitHubStats, setGitHubStats] = useState<GitHubStats>(mockGitHubStats);
-  const [repositories, setRepositories] = useState<Repository[]>(mockRepositories);
+  const [gitHubStats, setGitHubStats] = useState<GitHubStats | null>(null);
+  const [repositories, setRepositories] = useState<Repository[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [lastRefresh, setLastRefresh] = useState<Date | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -91,18 +50,19 @@ export default function LiveMetrics() {
       const data = await response.json();
 
       if (data.error) {
-        setError(data.error);
-      } else {
-        setError(null);
+        throw new Error(data.error);
       }
 
+      setError(null);
       setGitHubStats(data);
       setRepositories(data.repositories || []);
       setLastRefresh(new Date());
     } catch (err) {
       console.error('Error fetching GitHub data:', err);
-      setError('Failed to load real-time data');
-      // Keep using mock data on error
+      // Show nothing rather than placeholder numbers.
+      setGitHubStats(null);
+      setRepositories([]);
+      setError('GitHub data is unavailable right now');
     }
   };
 
@@ -153,9 +113,9 @@ export default function LiveMetrics() {
           <div className="flex items-center justify-center gap-4 text-sm text-slate-500 dark:text-slate-400">
             <span className="flex items-center gap-2">
               <div className={`w-2 h-2 rounded-full animate-pulse ${error ? 'bg-yellow-500' : 'bg-green-500'}`}></div>
-              {error ? 'Demo Data' : 'Live Data'}
+              {error ? 'Unavailable' : gitHubStats ? 'Live Data' : 'Loading'}
             </span>
-            <span>Last updated: {isClient && lastRefresh ? lastRefresh.toLocaleTimeString() : 'Loading...'}</span>
+            {gitHubStats && <span>Last updated: {isClient && lastRefresh ? lastRefresh.toLocaleTimeString() : 'Loading...'}</span>}
             {error && (
               <span className="text-yellow-600 dark:text-yellow-400 text-xs flex items-center gap-1">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
@@ -204,6 +164,14 @@ export default function LiveMetrics() {
                 </div>
               </div>
 
+              {!gitHubStats && (
+                <p className="text-sm text-slate-500 dark:text-slate-400 py-6 text-center">
+                  {error ? 'GitHub data is unavailable right now. Use Refresh to try again.' : 'Loading GitHub data...'}
+                </p>
+              )}
+
+              {gitHubStats && (
+              <>
               <div className="grid grid-cols-2 gap-4">
                 <div className="text-center p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
                   <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
@@ -260,6 +228,8 @@ export default function LiveMetrics() {
                   ))}
                 </div>
               </div>
+              </>
+              )}
             </div>
           </motion.div>
         </div>

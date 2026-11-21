@@ -140,48 +140,8 @@ export async function GET() {
   } catch (error) {
     console.error('GitHub API error:', error);
 
-    // Return mock data on error
-    const mockData = {
-      publicRepos: 24,
-      followers: 127,
-      following: 89,
-      totalStars: 156,
-      totalCommits: 2847,
-      contributionsThisYear: 342,
-      repositories: [
-        {
-          name: "cloud-migration-toolkit",
-          description: "Automated tools for migrating legacy applications to cloud-native architectures",
-          stars: 42,
-          forks: 8,
-          language: "C#",
-          lastCommit: "2 days ago",
-          url: "#"
-        },
-        {
-          name: "microservices-patterns",
-          description: "Implementation patterns for scalable microservices architecture",
-          stars: 38,
-          forks: 12,
-          language: "TypeScript",
-          lastCommit: "5 days ago",
-          url: "#"
-        },
-        {
-          name: "ai-integration-examples",
-          description: "Practical examples of AI/ML integration in enterprise applications",
-          stars: 29,
-          forks: 6,
-          language: "Python",
-          lastCommit: "1 week ago",
-          url: "#"
-        }
-      ],
-      lastUpdated: new Date().toISOString(),
-      error: 'Using mock data - GitHub API unavailable'
-    };
-
-    return NextResponse.json(mockData);
+    // No placeholder numbers: the page shows an 'unavailable' state instead.
+    return NextResponse.json({ error: 'GitHub API unavailable' });
   }
 }
 
