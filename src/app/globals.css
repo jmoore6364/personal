@@ -1,11 +1,19 @@
 @import "tailwindcss";
 
-/* The site is always dark (the "space" look), whatever the visitor's OS theme. */
+/* Dark (the "space" look) is the default whatever the visitor's OS theme;
+   the toggle removes the .dark class from <html> for the light version. */
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
+  --background: #ffffff;
+  --foreground: #171717;
+  color-scheme: light;
+}
+
+:root.dark {
   --background: #0a0a0a;
   --foreground: #ededed;
+  color-scheme: dark;
 }
 
 @theme inline {

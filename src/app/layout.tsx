@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -69,10 +70,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark" style={{ colorScheme: "dark" }}>
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <head>
+        {/* Apply a saved light-theme choice before first paint to avoid a flash. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "try{if(localStorage.getItem('theme')==='light')document.documentElement.classList.remove('dark')}catch(e){}",
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <ThemeToggle />
         {children}
       </body>
     </html>
