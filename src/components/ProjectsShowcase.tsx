@@ -50,11 +50,11 @@ const projects: Project[] = [
     category: "E-commerce Solutions"
   },
   {
-    title: "AI/ML Integration & Innovation",
-    description: "Currently exploring and implementing AI/ML solutions using Python, PyTorch, and cloud ML platforms. Introduced AI development tools like Cursor and Claude to accelerate team productivity.",
-    impact: "Pioneering AI adoption and modern development practices",
-    technologies: ["Python", "PyTorch", "Azure AI", "LangChain", "OpenAI", "Cursor", "Claude"],
-    category: "AI & Machine Learning"
+    title: "AI-Native Development Practice",
+    description: "Introduced AI tooling to engineering teams at JDXpert and ONEFlight, putting Cursor and Claude Code in the daily loop. Paired agentic coding workflows with design-first specs that give AI the context it needs, plus review gates and architectural guardrails on AI-generated code. Also built LLM-powered page generation into the DojoSage website builder.",
+    impact: "AI multiplies team velocity without outrunning quality",
+    technologies: ["Claude Code", "Cursor", "GitHub Copilot", "Agentic Coding Workflows", "Spec-First Design", "Review Gates", "LLM Features"],
+    category: "AI & Agentic Engineering"
   }
 ];
 

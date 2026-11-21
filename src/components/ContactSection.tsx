@@ -9,7 +9,7 @@ export default function ContactSection() {
           Let&apos;s Connect
         </h2>
         <p className="text-lg text-slate-600 dark:text-slate-400 mb-12">
-          Interested in discussing engineering leadership, cloud architecture, or AI/ML innovations?
+          Interested in discussing engineering leadership, cloud architecture, or AI-native development?
           I&apos;m always open to connecting with fellow technologists and exploring new opportunities.
         </p>
 
@@ -68,7 +68,7 @@ export default function ContactSection() {
             <ul className="text-slate-600 dark:text-slate-400 space-y-2 text-left">
               <li>• Engineering Leadership & Team Building</li>
               <li>• Cloud-Native Architecture (Azure/AWS)</li>
-              <li>• AI/ML Implementation & Strategy</li>
+              <li>• AI-Native Development & Agentic Workflows</li>
               <li>• SaaS Platform Scaling</li>
               <li>• DevOps & CI/CD Optimization</li>
               <li>• Technical Mentoring & Coaching</li>
@@ -78,15 +78,15 @@ export default function ContactSection() {
 
         <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-lg p-8">
           <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-100 mb-4">
-            Currently Exploring
+            AI in Practice
           </h3>
           <p className="text-slate-700 dark:text-slate-300 mb-4">
-            Actively studying ML, LLMs, and AI programming using Python, PyTorch, Hugging Face,
-            LangChain, and cloud ML platforms. Always interested in discussing emerging technologies
-            and their practical applications in enterprise environments.
+            Leading AI-native development with Cursor and Claude Code in the daily loop, and building
+            LLM-powered product features. Also studying ML and LLMs hands-on with Python, PyTorch,
+            Hugging Face, and LangChain.
           </p>
           <div className="flex flex-wrap justify-center gap-2">
-            {["Python", "PyTorch", "RAG", "Prompt Engineering", "Azure AI", "OpenAI", "LangChain"].map((tech, index) => (
+            {["Claude Code", "Cursor", "Agentic Workflows", "Context Engineering", "RAG", "Python", "PyTorch", "LangChain"].map((tech, index) => (
               <span key={index} className="px-3 py-1 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-full text-sm">
                 {tech}
               </span>

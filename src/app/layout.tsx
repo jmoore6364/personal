@@ -14,14 +14,14 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Jason Moore - Senior Software Engineer & Technical Leader",
-  description: "Strategic and execution-focused engineering leader with 25+ years of experience scaling SaaS platforms, building high-performing distributed teams, and leading cloud-native transformations. Expert in .NET, Azure, AI/ML, and team leadership.",
-  keywords: ["Software Engineer", "Technical Leader", "Engineering Manager", ".NET", "Azure", "Cloud Architecture", "Team Leadership", "AI/ML", "SaaS", "Microservices"],
+  description: "AI-forward engineering leader with 30 years of experience scaling SaaS platforms and building high-performing distributed teams. Leads AI-native development with Cursor and Claude Code, and builds event-driven .NET systems on Azure.",
+  keywords: ["Software Engineer", "Technical Leader", "Engineering Manager", ".NET", "Azure", "Cloud Architecture", "Team Leadership", "AI-Native Development", "Agentic Coding", "Claude Code", "Cursor", "SaaS", "Microservices"],
   authors: [{ name: "Jason Moore" }],
   creator: "Jason Moore",
   publisher: "Jason Moore",
   openGraph: {
     title: "Jason Moore - Senior Software Engineer & Technical Leader",
-    description: "25+ years of engineering leadership experience. Expert in scaling SaaS platforms, cloud architecture, and building high-performing teams.",
+    description: "30 years of engineering experience. AI-native development, scaling SaaS platforms, cloud architecture, and building high-performing teams.",
     url: "https://jasonmoore.dev",
     siteName: "Jason Moore Portfolio",
     type: "website",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Jason Moore - Senior Software Engineer & Technical Leader",
-    description: "25+ years of engineering leadership experience. Expert in scaling SaaS platforms, cloud architecture, and building high-performing teams.",
+    description: "30 years of engineering experience. AI-native development, scaling SaaS platforms, cloud architecture, and building high-performing teams.",
     images: ["/jason_profile.png"],
   },
   robots: {

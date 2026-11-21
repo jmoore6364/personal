@@ -1,6 +1,7 @@
 "use client";
 
 import ExperienceTimeline from '@/components/ExperienceTimeline';
+import AIEngineeringSection from '@/components/AIEngineeringSection';
 import ProjectsShowcase from '@/components/ProjectsShowcase';
 import SideVenturesShowcase from '@/components/SideVenturesShowcase';
 import SkillsSection from '@/components/SkillsSection';
@@ -54,7 +55,7 @@ export default function Home() {
                 </h2>
                 <div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-6">
                   <span className="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">
-                    25+ Years Experience
+                    30 Years Experience
                   </span>
                   <span className="px-4 py-2 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm font-medium">
                     Team Leadership
@@ -63,16 +64,17 @@ export default function Home() {
                     Cloud Architecture
                   </span>
                   <span className="px-4 py-2 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 rounded-full text-sm font-medium">
-                    AI/ML Integration
+                    AI-Native Engineering
                   </span>
                 </div>
               </div>
 
               <p className="text-lg text-slate-700 dark:text-slate-300 mb-8 max-w-3xl">
-                Strategic and execution-focused engineering leader with 25+ years of experience scaling SaaS platforms,
-                building high-performing distributed teams, and leading cloud-native transformations. Expert in mentoring engineers
-                to maximize their impact, leading large-scale refactors, and creating memorable customer experiences through
-                well-structured, maintainable code and collaborative, test-driven environments.
+                AI-forward engineering leader with 30 years scaling SaaS platforms and 7+ years leading engineers and
+                engineering managers. I build event-driven, distributed .NET systems that hold up under enterprise load,
+                and I lead teams the same way: design-first contracts, continuous flow, and AI-native development, with
+                Cursor and Claude Code in the daily loop and review gates that let AI multiply velocity without
+                outrunning quality.
               </p>
 
               {/* Contact Info Row */}
@@ -141,6 +143,15 @@ export default function Home() {
 
           {/* Quick Navigation */}
           <div className="flex flex-wrap justify-center gap-3 text-sm">
+            <a
+              href="#ai-engineering"
+              className="px-5 py-3 bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-700 dark:to-slate-800 text-slate-700 dark:text-slate-300 rounded-full hover:from-slate-200 hover:to-slate-300 dark:hover:from-slate-600 dark:hover:to-slate-700 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg font-medium flex items-center gap-2"
+            >
+              <svg className="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z" />
+              </svg>
+              AI Engineering
+            </a>
             <a
               href="#leadership"
               className="px-5 py-3 bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-700 dark:to-slate-800 text-slate-700 dark:text-slate-300 rounded-full hover:from-slate-200 hover:to-slate-300 dark:hover:from-slate-600 dark:hover:to-slate-700 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg font-medium flex items-center gap-2"
@@ -213,7 +224,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">25+</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">30</div>
               <div className="text-slate-600 dark:text-slate-400">Years Experience</div>
             </div>
             <div>
@@ -228,6 +239,11 @@ export default function Home() {
         </div>
       </section>
 
+      {/* AI & Agentic Engineering */}
+      <div id="ai-engineering" className="relative z-10">
+        <AIEngineeringSection />
+      </div>
+
       {/* About Section */}
       <section className="py-20 px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
@@ -236,7 +252,7 @@ export default function Home() {
           </h2>
           <div className="prose prose-lg mx-auto text-slate-700 dark:text-slate-300">
             <p>
-              With 25+ years of experience, I specialize in scaling SaaS platforms and building
+              With 30 years of experience, I specialize in scaling SaaS platforms and building
               high-performing distributed teams. I&apos;ve led cloud-native transformations, architected
               resilient microservices, and consistently aligned engineering operations with business strategy.
             </p>
@@ -254,8 +270,10 @@ export default function Home() {
               a culture of delivery, innovation, and continuous improvement.
             </p>
             <p>
-              Currently exploring AI/ML innovations with Python, PyTorch, and cloud ML platforms while
-              leading engineering teams in modern technologies like .NET 9, Blazor, Azure, and Kubernetes.
+              I lead AI-native development in practice, not theory: Cursor and Claude Code in the daily loop,
+              design-first specs that give AI the context it needs, and review gates and architectural guardrails
+              on AI-generated code. I&apos;ve introduced AI tooling to engineering teams at two companies and built
+              LLM-powered features into a production SaaS product.
             </p>
           </div>
         </div>
