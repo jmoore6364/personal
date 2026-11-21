@@ -21,6 +21,7 @@ interface Repository {
   language: string;
   lastCommit: string;
   url: string;
+  private?: boolean;
 }
 
 interface TechTrend {
@@ -42,35 +43,8 @@ const mockGitHubStats: GitHubStats = {
   lastUpdated: new Date().toISOString()
 };
 
-const mockRepositories: Repository[] = [
-  {
-    name: "cloud-migration-toolkit",
-    description: "Automated tools for migrating legacy applications to cloud-native architectures",
-    stars: 42,
-    forks: 8,
-    language: "C#",
-    lastCommit: "2 days ago",
-    url: "#"
-  },
-  {
-    name: "microservices-patterns",
-    description: "Implementation patterns for scalable microservices architecture",
-    stars: 38,
-    forks: 12,
-    language: "TypeScript",
-    lastCommit: "5 days ago",
-    url: "#"
-  },
-  {
-    name: "ai-integration-examples",
-    description: "Practical examples of AI/ML integration in enterprise applications",
-    stars: 29,
-    forks: 6,
-    language: "Python",
-    lastCommit: "1 week ago",
-    url: "#"
-  }
-];
+// Filled from /api/github once it responds; nothing is listed before that.
+const mockRepositories: Repository[] = [];
 
 const techTrends: TechTrend[] = [
   {
@@ -306,6 +280,7 @@ export default function LiveMetrics() {
                 </div>
               </div>
 
+              {repositories.length > 0 && (
               <div className="mt-6 pt-6 border-t border-slate-200 dark:border-slate-700">
                 <h4 className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-3">Recent Repositories</h4>
                 <div className="space-y-3">
@@ -319,22 +294,34 @@ export default function LiveMetrics() {
                     >
                       <div className={`w-3 h-3 rounded-full ${languageColors[repo.language] || 'bg-gray-500'} mt-1.5 flex-shrink-0`}></div>
                       <div className="flex-1 min-w-0">
-                        <div className="text-sm font-medium text-slate-900 dark:text-slate-100 truncate">
-                          {repo.name}
+                        <div className="flex items-center gap-2">
+                          <span className="text-sm font-medium text-slate-900 dark:text-slate-100 truncate">
+                            {repo.name}
+                          </span>
+                          {repo.private && (
+                            <span className="px-2 py-0.5 text-[10px] uppercase tracking-wide rounded-full border border-slate-300 dark:border-slate-600 text-slate-500 dark:text-slate-400 flex-shrink-0">
+                              Private
+                            </span>
+                          )}
                         </div>
-                        <div className="text-xs text-slate-600 dark:text-slate-400 line-clamp-2">
-                          {repo.description}
-                        </div>
-                        <div className="flex items-center gap-3 mt-1 text-xs text-slate-500">
-                          <span>⭐ {repo.stars}</span>
-                          <span>🍴 {repo.forks}</span>
-                          <span>{repo.lastCommit}</span>
-                        </div>
+                        {repo.description && (
+                          <div className="text-xs text-slate-600 dark:text-slate-400 line-clamp-2">
+                            {repo.description}
+                          </div>
+                        )}
+                        {(!repo.private || repo.lastCommit) && (
+                          <div className="flex items-center gap-3 mt-1 text-xs text-slate-500">
+                            {!repo.private && <span>⭐ {repo.stars}</span>}
+                            {!repo.private && <span>🍴 {repo.forks}</span>}
+                            {repo.lastCommit && <span>{repo.lastCommit}</span>}
+                          </div>
+                        )}
                       </div>
                     </motion.div>
                   ))}
                 </div>
               </div>
+              )}
             </div>
           </motion.div>
 
